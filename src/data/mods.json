@@ -1,0 +1,67 @@
+[
+  {
+    "id": "bharatbenz-bs6",
+    "slug": "bharatbenz-bs6",
+    "name": "BHARATBENZ GLIDER Z+ BS6 Luxury Coach",
+    "game": "BUSSID",
+    "category": "BUSSID Buses",
+    "shortDescription": "Official BharatBenz Glider Z+ BS6 Oneness luxury bus mod for Bus Simulator Indonesia with realistic engine sounds and animated doors.",
+    "description": "Experience the superior engineering of the BharatBenz Glider Z+ BS6 Luxury Tourist Coach in Bus Simulator Indonesia. Features realistic BharatBenz heavy diesel engine sounds, working air suspension, full 3-button animations (passenger doors, luggage compartment, driver cabin window), custom LED lighting, Oneness liveries, and high-speed gearing for national highway cruising.",
+    "thumbnailUrl": "/images/mods/bharatbenz-glider-z.jpg",
+    "screenshots": [
+      "/images/mods/bharatbenz-glider-z.jpg"
+    ],
+    "version": "Glider Z+ (BS6)",
+    "supportedGameVersion": "BUSSID v4.0.4 - v4.3.4+",
+    "fileSize": "38.5 MB",
+    "uploadDate": "2024-11-23",
+    "downloadUrl": "https://sub4unlock.com/S/r7b37",
+    "author": "VayZenXPlayz",
+    "downloadsCount": 1421,
+    "likesCount": 285,
+    "rating": 5,
+    "isFeatured": true,
+    "isTrending": true,
+    "badge": "NEW",
+    "features": [
+      "Authentic BharatBenz BS6 diesel engine sound loops",
+      "Full 3-stage interactive animations (Doors & Luggage Compartment)",
+      "HD 4K interior passenger cabin with reading lamps",
+      "Working dashboard speedometer & illuminated dials",
+      "Realistic air brake hiss & reverse warning alarm",
+      "High-speed highway gear ratio & smooth air ride"
+    ],
+    "requirements": [
+      "Bus Simulator Indonesia version 4.0.4 or higher installed",
+      "Minimum 3GB RAM on Android device",
+      "40MB free storage space for mod & livery files"
+    ],
+    "installationGuide": [
+      {
+        "step": 1,
+        "title": "Download the Mod File",
+        "instruction": "Click the Download button below to unlock and download your BharatBenz Glider Z+ mod file."
+      },
+      {
+        "step": 2,
+        "title": "Move to BUSSID/Mods Directory",
+        "instruction": "Open ZArchiver or your file manager, locate the downloaded file, and move it to: Internal Storage > BUSSID > Mods."
+      },
+      {
+        "step": 3,
+        "title": "Activate in BUSSID Garage",
+        "instruction": "Launch Bus Simulator Indonesia, open Garage (Garasi), navigate to the BharatBenz Glider Z+ coach and tap 'Use' (Pakai)!"
+      }
+    ],
+    "tags": [
+      "bussid",
+      "buses",
+      "bharatbenz",
+      "glider z+",
+      "bs6",
+      "oneness",
+      "kerala bus",
+      "tourist coach"
+    ]
+  }
+]
