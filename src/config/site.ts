@@ -12,7 +12,7 @@ export const siteConfig: SiteConfig = {
   subscribeUrl: 'https://www.youtube.com/@VayZenXPlayz?sub_confirmation=1',
   subscribersCountText: '311',
   videosCountText: '240 Videos',
-  discordUrl: 'https://discord.gg/vayzenxplayz',
+  discordUrl: 'https://discord.gg/3M2TCvVZp',
   instagramUrl: 'https://instagram.com/vayzenxplayz',
   twitterUrl: 'https://twitter.com/vayzenxplayz',
   telegramUrl: 'https://t.me/vayzenxplayzmods',

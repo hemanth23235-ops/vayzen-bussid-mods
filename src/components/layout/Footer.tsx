@@ -11,6 +11,7 @@ import {
   Lock,
 } from 'lucide-react';
 import YouTubeIcon from '@/components/common/YouTubeIcon';
+import DiscordIcon from '@/components/common/DiscordIcon';
 import { siteConfig } from '@/config/site';
 
 export default function Footer() {
@@ -26,7 +27,7 @@ export default function Footer() {
     {
       name: 'Discord',
       href: siteConfig.discordUrl,
-      icon: ExternalLink,
+      icon: DiscordIcon,
       color: 'hover:text-indigo-400 hover:border-indigo-500/50',
     },
     {

@@ -12,6 +12,7 @@ import {
   ExternalLink,
 } from 'lucide-react';
 import YouTubeIcon from '@/components/common/YouTubeIcon';
+import DiscordIcon from '@/components/common/DiscordIcon';
 import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
@@ -131,9 +132,9 @@ export default function AboutPage() {
               href={siteConfig.discordUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-2.5 rounded-xl bg-dark-850 hover:bg-dark-800 text-gray-200 text-xs font-semibold flex items-center gap-2 border border-dark-700 hover:border-indigo-500/50 transition"
+              className="px-5 py-2.5 rounded-xl bg-indigo-600/20 hover:bg-indigo-600 text-gray-200 hover:text-white text-xs font-semibold flex items-center gap-2 border border-indigo-500/40 hover:border-indigo-600 transition shadow-lg shadow-indigo-950/40"
             >
-              <ExternalLink className="w-4 h-4 text-indigo-400" />
+              <DiscordIcon className="w-4 h-4 text-indigo-400 group-hover:text-white" />
               <span>Discord Community</span>
             </a>
 
