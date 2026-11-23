@@ -12,34 +12,34 @@ import {
 import { siteConfig } from '@/config/site';
 
 export default function YouTubeSection() {
-  // Showcase videos for VayZenXPlayz YouTube channel
+  // Official VayZenXPlayz YouTube channel videos
   const showcaseVideos = [
     {
-      id: 'video-1',
-      title: 'BEST BUSSID Kerala Private Bus Mod V4.3.4 Gameplay + DJ Bass Horn Test!',
-      thumbnailUrl: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80',
-      views: '142K views',
-      duration: '12:45',
-      date: '3 days ago',
-      url: `${siteConfig.channelUrl}/videos`,
+      id: 'MRX6tcNMF4M',
+      title: 'Ultra Realistic Volvo 9600s Sleeper+Seater Bus Mod for BUSSID',
+      thumbnailUrl: '/images/videos/volvo-9600s.jpg',
+      views: 'VayZenXPlayz Official',
+      duration: 'Gameplay',
+      date: 'Latest',
+      url: 'https://www.youtube.com/watch?v=MRX6tcNMF4M',
     },
     {
-      id: 'video-2',
-      title: 'Mahindra Thar 4x4 Offroad Extreme Wayanad Ghat Hairpin Climb in BUSSID',
-      thumbnailUrl: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80',
-      views: '98K views',
-      duration: '09:18',
-      date: '1 week ago',
-      url: `${siteConfig.channelUrl}/videos`,
+      id: 'Kuw5tGrY69s',
+      title: 'Ashok Leyland Bus Mod for BUSSID | Complete Showcase & Review',
+      thumbnailUrl: '/images/videos/ashok-leyland.jpg',
+      views: 'VayZenXPlayz Official',
+      duration: 'Gameplay',
+      date: 'Featured',
+      url: 'https://www.youtube.com/watch?v=Kuw5tGrY69s',
     },
     {
-      id: 'video-3',
-      title: 'Tata Signa 4825 Heavy Tipper 16-Wheeler Loaded Cargo Drive & Hydraulic Test',
-      thumbnailUrl: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=800&q=80',
-      views: '215K views',
-      duration: '14:20',
-      date: '2 weeks ago',
-      url: `${siteConfig.channelUrl}/videos`,
+      id: 'SgOzOb79R8k',
+      title: 'ZEDONE BS6 New Luxury Bus Mod for BUSSID 2026',
+      thumbnailUrl: '/images/videos/zedone-bs6.jpg',
+      views: 'VayZenXPlayz Official',
+      duration: 'Gameplay',
+      date: 'Trending',
+      url: 'https://www.youtube.com/watch?v=SgOzOb79R8k',
     },
   ];
 
