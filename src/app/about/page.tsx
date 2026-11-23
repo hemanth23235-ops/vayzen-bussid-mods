@@ -3,7 +3,6 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import {
   Flame,
-  Youtube,
   ShieldCheck,
   Download,
   Users,
@@ -12,6 +11,7 @@ import {
   Send,
   ExternalLink,
 } from 'lucide-react';
+import YouTubeIcon from '@/components/common/YouTubeIcon';
 import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
@@ -83,7 +83,7 @@ export default function AboutPage() {
               rel="noopener noreferrer"
               className="px-6 py-3 rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold text-xs flex items-center gap-2 shadow-lg shadow-red-900/30 transition transform hover:-translate-y-0.5"
             >
-              <Youtube className="w-4 h-4 fill-white" />
+              <YouTubeIcon className="w-4 h-4" />
               <span>Subscribe on YouTube</span>
             </a>
 

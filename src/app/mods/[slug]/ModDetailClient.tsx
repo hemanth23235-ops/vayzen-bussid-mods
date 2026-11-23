@@ -21,12 +21,12 @@ import {
   CheckSquare,
   Sparkles,
   Info,
-  Youtube,
 } from 'lucide-react';
 import { ModItem } from '@/types';
 import { formatNumber, formatDate } from '@/lib/utils';
 import ModCard from '@/components/mods/ModCard';
 import { siteConfig } from '@/config/site';
+import YouTubeIcon from '@/components/common/YouTubeIcon';
 
 interface ModDetailClientProps {
   mod: ModItem;
@@ -391,8 +391,17 @@ export default function ModDetailClient({ mod, relatedMods }: ModDetailClientPro
             {/* Creator Channel Card */}
             <div className="bg-gradient-to-br from-red-950/30 to-dark-900 border border-red-900/40 rounded-3xl p-5 space-y-3">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-red-600 flex items-center justify-center shadow-md">
-                  <Youtube className="w-5 h-5 fill-white text-white" />
+                <div className="relative w-12 h-12 rounded-xl overflow-hidden p-0.5 bg-gradient-to-tr from-brand-orange to-red-600 shrink-0">
+                  <Image
+                    src="/images/channel-avatar.jpg"
+                    alt={siteConfig.channelName}
+                    width={48}
+                    height={48}
+                    className="w-full h-full object-cover rounded-[10px]"
+                  />
+                  <div className="absolute -bottom-1 -right-1 bg-dark-950 p-0.5 rounded-full border border-dark-750">
+                    <YouTubeIcon className="w-3.5 h-3.5" />
+                  </div>
                 </div>
                 <div>
                   <h4 className="text-sm font-bold text-white">{siteConfig.channelName}</h4>
@@ -403,9 +412,9 @@ export default function ModDetailClient({ mod, relatedMods }: ModDetailClientPro
                 href={siteConfig.subscribeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-2.5 px-3 rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold text-xs flex items-center justify-center gap-2 transition"
+                className="w-full py-2.5 px-3 rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold text-xs flex items-center justify-center gap-2 transition shadow-md shadow-red-900/30"
               >
-                <Youtube className="w-4 h-4 fill-white" />
+                <YouTubeIcon className="w-4 h-4" />
                 <span>Subscribe on YouTube</span>
               </a>
             </div>

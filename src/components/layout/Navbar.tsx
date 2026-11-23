@@ -2,16 +2,17 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import {
   Flame,
   Search,
   Menu,
   X,
-  Youtube,
   Bus,
   ShieldCheck,
 } from 'lucide-react';
+import YouTubeIcon from '@/components/common/YouTubeIcon';
 import { siteConfig } from '@/config/site';
 import SearchModal from '@/components/common/SearchModal';
 
@@ -71,8 +72,14 @@ export default function Navbar() {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2.5 group">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-orange to-red-600 flex items-center justify-center shadow-orange-sm group-hover:shadow-orange-glow transition duration-300 transform group-hover:scale-105">
-                <Flame className="w-6 h-6 text-white animate-pulse-slow" />
+              <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-brand-orange to-red-600 p-0.5 shadow-orange-sm group-hover:shadow-orange-glow transition duration-300 transform group-hover:scale-105 shrink-0 overflow-hidden">
+                <Image
+                  src="/images/channel-avatar.jpg"
+                  alt="VayZenXPlayz"
+                  width={40}
+                  height={40}
+                  className="w-full h-full object-cover rounded-[10px]"
+                />
               </div>
               <div className="flex flex-col">
                 <div className="flex items-center gap-1.5">
@@ -131,7 +138,7 @@ export default function Navbar() {
                 rel="noopener noreferrer"
                 className="hidden sm:flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-red-600 hover:bg-red-700 text-white text-xs font-bold shadow-md shadow-red-900/30 hover:shadow-red-700/50 transition transform hover:-translate-y-0.5"
               >
-                <Youtube className="w-4 h-4 fill-white" />
+                <YouTubeIcon className="w-4 h-4 shrink-0" />
                 <span>Subscribe</span>
               </a>
 
@@ -172,7 +179,7 @@ export default function Navbar() {
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold transition shadow-lg"
               >
-                <Youtube className="w-5 h-5 fill-white" />
+                <YouTubeIcon className="w-5 h-5 shrink-0" />
                 <span>Subscribe to {siteConfig.channelName}</span>
               </a>
             </div>

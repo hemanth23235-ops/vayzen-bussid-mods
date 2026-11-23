@@ -5,7 +5,6 @@ import Link from 'next/link';
 import {
   Download,
   Flame,
-  Youtube,
   ShieldCheck,
   Bus,
   Users,
@@ -13,6 +12,7 @@ import {
   TrendingUp,
   Layers,
 } from 'lucide-react';
+import YouTubeIcon from '@/components/common/YouTubeIcon';
 import { siteConfig } from '@/config/site';
 
 export default function HeroSection() {
@@ -87,7 +87,7 @@ export default function HeroSection() {
             rel="noopener noreferrer"
             className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-red-600/90 hover:bg-red-600 text-white font-semibold text-base flex items-center justify-center gap-2 shadow-lg shadow-red-900/30 transition transform hover:-translate-y-0.5"
           >
-            <Youtube className="w-5 h-5 fill-white" />
+            <YouTubeIcon className="w-5 h-5" />
             <span>Subscribe on YouTube</span>
           </a>
         </div>

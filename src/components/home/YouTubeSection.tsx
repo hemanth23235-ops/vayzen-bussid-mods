@@ -1,7 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
 import {
-  Youtube,
   Play,
   Users,
   Film,
@@ -10,6 +9,7 @@ import {
   CheckCircle2,
 } from 'lucide-react';
 import { siteConfig } from '@/config/site';
+import YouTubeIcon from '@/components/common/YouTubeIcon';
 
 export default function YouTubeSection() {
   // Official VayZenXPlayz YouTube channel videos
@@ -54,9 +54,24 @@ export default function YouTubeSection() {
           <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
             {/* Channel Info */}
             <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-5">
-              <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-tr from-brand-orange to-red-600 p-1 shrink-0 shadow-lg shadow-red-900/30">
-                <div className="w-full h-full rounded-2xl bg-dark-950 flex items-center justify-center overflow-hidden">
-                  <Youtube className="w-10 h-10 text-red-500 fill-red-500" />
+              {/* Official Channel Profile Picture with YouTube Verification Badge */}
+              <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-tr from-brand-orange via-red-500 to-red-600 p-1 shrink-0 shadow-xl shadow-red-900/30">
+                <div className="relative w-full h-full rounded-[14px] overflow-hidden bg-dark-950">
+                  <Image
+                    src="/images/channel-avatar.jpg"
+                    alt={siteConfig.channelName}
+                    fill
+                    sizes="(max-width: 640px) 80px, 96px"
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+                {/* Official YouTube badge overlay at corner */}
+                <div
+                  className="absolute -bottom-1 -right-1 bg-dark-950 p-1 rounded-full border border-dark-700 shadow-lg"
+                  title="Official YouTube Channel"
+                >
+                  <YouTubeIcon className="w-5 h-5" />
                 </div>
               </div>
 
@@ -94,9 +109,9 @@ export default function YouTubeSection() {
                 href={siteConfig.subscribeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-red-900/50 hover:shadow-red-600/50 transition transform hover:-translate-y-0.5"
+                className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold text-sm flex items-center justify-center gap-2.5 shadow-lg shadow-red-900/50 hover:shadow-red-600/50 transition transform hover:-translate-y-0.5"
               >
-                <Youtube className="w-5 h-5 fill-white" />
+                <YouTubeIcon className="w-5 h-5" />
                 <span>Subscribe on YouTube</span>
                 <Bell className="w-4 h-4 ml-1" />
               </a>
@@ -179,9 +194,9 @@ export default function YouTubeSection() {
                     href={vid.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full py-2 px-3 rounded-xl bg-dark-850 hover:bg-red-600 text-gray-200 hover:text-white text-xs font-semibold flex items-center justify-center gap-1.5 border border-dark-750 hover:border-red-600 transition"
+                    className="w-full py-2 px-3 rounded-xl bg-dark-850 hover:bg-red-600 text-gray-200 hover:text-white text-xs font-semibold flex items-center justify-center gap-2 border border-dark-750 hover:border-red-600 transition group/btn"
                   >
-                    <Youtube className="w-3.5 h-3.5 text-red-500 group-hover:text-white" />
+                    <YouTubeIcon className="w-4 h-4 shrink-0" />
                     <span>Watch on YouTube</span>
                   </a>
                 </div>

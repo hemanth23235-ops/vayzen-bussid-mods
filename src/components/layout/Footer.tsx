@@ -1,8 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   Flame,
-  Youtube,
   Send,
   Instagram,
   Twitter,
@@ -10,6 +10,7 @@ import {
   ExternalLink,
   Lock,
 } from 'lucide-react';
+import YouTubeIcon from '@/components/common/YouTubeIcon';
 import { siteConfig } from '@/config/site';
 
 export default function Footer() {
@@ -19,7 +20,7 @@ export default function Footer() {
     {
       name: 'YouTube',
       href: siteConfig.channelUrl,
-      icon: Youtube,
+      icon: YouTubeIcon,
       color: 'hover:text-red-500 hover:border-red-500/50',
     },
     {
@@ -55,8 +56,14 @@ export default function Footer() {
           {/* Brand info */}
           <div className="lg:col-span-2 space-y-4">
             <Link href="/" className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-orange to-red-600 flex items-center justify-center shadow-orange-sm">
-                <Flame className="w-5 h-5 text-white" />
+              <div className="relative w-9 h-9 rounded-xl bg-gradient-to-br from-brand-orange to-red-600 p-0.5 shadow-orange-sm overflow-hidden shrink-0">
+                <Image
+                  src="/images/channel-avatar.jpg"
+                  alt="VayZenXPlayz"
+                  width={36}
+                  height={36}
+                  className="w-full h-full object-cover rounded-[10px]"
+                />
               </div>
               <span className="font-extrabold text-xl tracking-tight text-white">
                 VAYZEN<span className="text-brand-orange">X</span>PLAYZ{' '}
