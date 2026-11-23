@@ -75,15 +75,15 @@ export default function LatestAndPopularSection({ latestMods, mostDownloadedMods
             <div className="w-12 h-12 rounded-2xl bg-brand-orange/15 border border-brand-orange/30 text-brand-orange flex items-center justify-center mx-auto">
               <TrendingUp className="w-6 h-6" />
             </div>
-            <h3 className="text-lg font-bold text-white">No BUSSID Mods Published Yet</h3>
+            <h3 className="text-lg font-bold text-white">New BUSSID Mods Releasing Soon</h3>
             <p className="text-xs text-gray-400 max-w-md mx-auto leading-relaxed">
-              Your platform is clean and ready. Open your Admin Portal to upload and publish your first BUSSID mod!
+              We are adding new Kerala buses, trucks, and maps daily. Check back soon for fresh downloads!
             </p>
             <Link
-              href="/admin"
+              href="/mods"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-orange hover:bg-brand-orange-hover text-white text-xs font-bold shadow-orange-sm transition"
             >
-              <span>Go to Admin Portal</span>
+              <span>Explore All BUSSID Mods</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>

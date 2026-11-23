@@ -175,14 +175,6 @@ export default function Navbar() {
                 <Youtube className="w-5 h-5 fill-white" />
                 <span>Subscribe to {siteConfig.channelName}</span>
               </a>
-              <Link
-                href="/admin"
-                onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-dark-850 hover:bg-dark-800 text-gray-400 hover:text-white text-xs border border-dark-700 transition"
-              >
-                <ShieldCheck className="w-4 h-4 text-brand-orange" />
-                <span>Admin BUSSID Manager</span>
-              </Link>
             </div>
           </div>
         )}

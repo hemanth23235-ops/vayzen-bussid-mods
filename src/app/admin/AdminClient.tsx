@@ -383,13 +383,6 @@ export default function AdminClient() {
               {loading ? 'Authenticating...' : 'Unlock Dashboard'}
             </button>
           </form>
-
-          <div className="p-3 bg-dark-850 rounded-xl border border-dark-750 text-[11px] text-gray-400 space-y-1">
-            <span className="font-semibold text-gray-300 block">Default Setup Key:</span>
-            <span>
-              Configured via <code className="text-brand-orange">ADMIN_PASSWORD</code> environment variable. (Default: <code className="text-brand-orange">vayzenadmin2024</code>)
-            </span>
-          </div>
         </div>
       </div>
     );

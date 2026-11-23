@@ -167,14 +167,9 @@ export default function Footer() {
             <p className="text-xs text-gray-400 leading-relaxed">
               Every .bussidmod file is manually tested inside Bus Simulator Indonesia v4.0.4+ and virus-scanned with VirusTotal.
             </p>
-            <div className="pt-2">
-              <Link
-                href="/admin"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-dark-850 hover:bg-dark-800 text-gray-400 hover:text-brand-orange text-xs border border-dark-700 transition"
-              >
-                <Lock className="w-3.5 h-3.5" />
-                <span>Admin Login</span>
-              </Link>
+            <div className="pt-2 flex items-center gap-2 text-xs text-emerald-400">
+              <ShieldAlert className="w-4 h-4 text-emerald-400 shrink-0" />
+              <span className="font-semibold">100% Virus-Free & Safe</span>
             </div>
           </div>
         </div>

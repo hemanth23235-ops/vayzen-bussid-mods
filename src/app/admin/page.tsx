@@ -3,11 +3,11 @@ import { Metadata } from 'next';
 import AdminClient from './AdminClient';
 
 export const metadata: Metadata = {
-  title: 'Admin Mod Manager - VayZenXPlayz Mods',
-  description: 'Manage gaming mods, update download links, modify versions, and configure featured content.',
+  title: 'Admin Access',
   robots: {
     index: false,
     follow: false,
+    nocache: true,
   },
 };
 
