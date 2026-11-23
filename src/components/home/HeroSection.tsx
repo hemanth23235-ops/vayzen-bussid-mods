@@ -17,10 +17,10 @@ import { siteConfig } from '@/config/site';
 
 export default function HeroSection() {
   const stats = [
-    { label: 'Active BUSSID Mods', value: '120+', icon: Bus },
-    { label: 'Total Downloads', value: '2.8M+', icon: Download },
-    { label: 'YouTube Community', value: siteConfig.subscribersCountText, icon: Users },
-    { label: 'Clean .bussidmod Files', value: '100%', icon: ShieldCheck },
+    { label: 'Official Channel', value: `${siteConfig.channelName}`, icon: Bus },
+    { label: 'YouTube Videos', value: siteConfig.videosCountText, icon: Download },
+    { label: 'YouTube Subscribers', value: siteConfig.subscribersCountText, icon: Users },
+    { label: 'Clean .bussidmod Files', value: '100% Safe', icon: ShieldCheck },
   ];
 
   return (

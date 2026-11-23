@@ -10,8 +10,8 @@ export const siteConfig: SiteConfig = {
   // Easily update your YouTube channel link here:
   channelUrl: 'https://www.youtube.com/@VayZenXPlayz',
   subscribeUrl: 'https://www.youtube.com/@VayZenXPlayz?sub_confirmation=1',
-  subscribersCountText: '125K+',
-  videosCountText: '350+ Videos',
+  subscribersCountText: '311',
+  videosCountText: '240 Videos',
   discordUrl: 'https://discord.gg/vayzenxplayz',
   instagramUrl: 'https://instagram.com/vayzenxplayz',
   twitterUrl: 'https://twitter.com/vayzenxplayz',

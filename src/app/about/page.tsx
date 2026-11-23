@@ -46,7 +46,7 @@ export default function AboutPage() {
     {
       title: 'Active YouTube Community',
       description:
-        'Backed by over 125,000+ passionate BUSSID players on YouTube, with regular video showcases, horn tests, livery reveals, and mountain climb challenges.',
+        'Backed by an active community of passionate BUSSID players on YouTube, with regular video showcases, horn tests, livery reveals, and mountain climb challenges.',
       icon: Users,
       color: 'text-purple-400 bg-purple-950/50 border-purple-500/30',
     },
