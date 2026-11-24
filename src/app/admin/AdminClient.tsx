@@ -21,8 +21,11 @@ import {
   Save,
   X,
   Bus,
+  MessageSquare,
+  Clock,
+  CheckCheck,
 } from 'lucide-react';
-import { ModItem } from '@/types';
+import { ModItem, ModRequest } from '@/types';
 import { categories } from '@/data/categories';
 import { formatNumber, formatDate, slugify } from '@/lib/utils';
 
@@ -37,6 +40,12 @@ export default function AdminClient() {
   const [modalOpen, setModalOpen] = useState(false);
   const [editingMod, setEditingMod] = useState<ModItem | null>(null);
   const [statusMessage, setStatusMessage] = useState<{ text: string; type: 'success' | 'error' } | null>(null);
+
+  // Mod Requests Tab State
+  const [activeTab, setActiveTab] = useState<'mods' | 'requests'>('mods');
+  const [requests, setRequests] = useState<ModRequest[]>([]);
+  const [requestSearch, setRequestSearch] = useState('');
+  const [requestFilter, setRequestFilter] = useState<'all' | 'pending' | 'in_progress' | 'completed' | 'rejected'>('all');
 
   // Form State
   const [formData, setFormData] = useState({
@@ -66,6 +75,7 @@ export default function AdminClient() {
   useEffect(() => {
     checkAuth();
     loadMods();
+    loadRequests();
   }, []);
 
   const checkAuth = async () => {
@@ -90,6 +100,55 @@ export default function AdminClient() {
     }
   };
 
+  const loadRequests = async () => {
+    try {
+      const res = await fetch('/api/requests');
+      const data = await res.json();
+      if (data.success) {
+        setRequests(data.requests);
+      }
+    } catch (err) {
+      console.error('Failed to load subscriber requests:', err);
+    }
+  };
+
+  const handleUpdateRequestStatus = async (id: string, status: ModRequest['status']) => {
+    try {
+      const res = await fetch('/api/requests', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id, status }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setStatusMessage({ text: `Request status updated to ${status}`, type: 'success' });
+        loadRequests();
+      } else {
+        setStatusMessage({ text: data.message || 'Failed to update request', type: 'error' });
+      }
+    } catch {
+      setStatusMessage({ text: 'Network error updating request', type: 'error' });
+    }
+  };
+
+  const handleDeleteRequest = async (id: string) => {
+    if (!confirm('Are you sure you want to delete this subscriber request?')) return;
+    try {
+      const res = await fetch(`/api/requests?id=${encodeURIComponent(id)}`, {
+        method: 'DELETE',
+      });
+      const data = await res.json();
+      if (data.success) {
+        setStatusMessage({ text: 'Subscriber request deleted successfully', type: 'success' });
+        loadRequests();
+      } else {
+        setStatusMessage({ text: data.message || 'Failed to delete request', type: 'error' });
+      }
+    } catch {
+      setStatusMessage({ text: 'Network error deleting request', type: 'error' });
+    }
+  };
+
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoginError('');
@@ -106,6 +165,7 @@ export default function AdminClient() {
       if (data.success) {
         setIsAuthenticated(true);
         loadMods();
+        loadRequests();
       } else {
         setLoginError(data.message || 'Invalid password');
       }
@@ -328,6 +388,20 @@ export default function AdminClient() {
       m.category.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  // Filter requests by search and status
+  const filteredRequests = requests.filter((r) => {
+    const matchesSearch =
+      r.modName.toLowerCase().includes(requestSearch.toLowerCase()) ||
+      r.requesterName.toLowerCase().includes(requestSearch.toLowerCase()) ||
+      (r.category && r.category.toLowerCase().includes(requestSearch.toLowerCase())) ||
+      (r.emailOrSocial && r.emailOrSocial.toLowerCase().includes(requestSearch.toLowerCase()));
+
+    const matchesStatus = requestFilter === 'all' || r.status === requestFilter;
+    return matchesSearch && matchesStatus;
+  });
+
+  const pendingRequestsCount = requests.filter((r) => r.status === 'pending').length;
+
   // If loading auth state
   if (isAuthenticated === null) {
     return (
@@ -467,9 +541,9 @@ export default function AdminClient() {
         </div>
 
         {/* Dashboard Statistics Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-4">
           <div className="p-5 rounded-2xl bg-dark-900 border border-dark-750 space-y-1">
-            <span className="text-xs text-gray-400 font-medium">Total Live BUSSID Mods</span>
+            <span className="text-xs text-gray-400 font-medium">Total Live Mods</span>
             <p className="text-2xl font-extrabold text-white font-mono">{mods.length}</p>
           </div>
           <div className="p-5 rounded-2xl bg-dark-900 border border-dark-750 space-y-1">
@@ -479,19 +553,70 @@ export default function AdminClient() {
             </p>
           </div>
           <div className="p-5 rounded-2xl bg-dark-900 border border-dark-750 space-y-1">
-            <span className="text-xs text-gray-400 font-medium">Cumulative Downloads</span>
+            <span className="text-xs text-gray-400 font-medium">Total Downloads</span>
             <p className="text-2xl font-extrabold text-emerald-400 font-mono">
               {formatNumber(mods.reduce((acc, m) => acc + (m.downloadsCount || 0), 0))}
             </p>
           </div>
           <div className="p-5 rounded-2xl bg-dark-900 border border-dark-750 space-y-1">
-            <span className="text-xs text-gray-400 font-medium">Active Categories</span>
+            <span className="text-xs text-gray-400 font-medium">Categories</span>
             <p className="text-2xl font-extrabold text-white font-mono">{categories.length}</p>
+          </div>
+          <div className="p-5 rounded-2xl bg-dark-900 border border-dark-750 space-y-1">
+            <span className="text-xs text-gray-400 font-medium">Subscriber Requests</span>
+            <div className="flex items-center gap-2">
+              <p className="text-2xl font-extrabold text-white font-mono">{requests.length}</p>
+              {pendingRequestsCount > 0 && (
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-red-500/20 text-red-400 border border-red-500/30 animate-pulse">
+                  {pendingRequestsCount} Pending
+                </span>
+              )}
+            </div>
           </div>
         </div>
 
-        {/* Mods Search & Table Section */}
-        <div className="bg-dark-900 border border-dark-750 rounded-3xl overflow-hidden shadow-xl">
+        {/* Admin Navigation Tabs */}
+        <div className="flex items-center gap-2 border-b border-dark-800 pb-3">
+          <button
+            onClick={() => setActiveTab('mods')}
+            className={`px-5 py-2.5 rounded-xl font-bold text-xs flex items-center gap-2 transition ${
+              activeTab === 'mods'
+                ? 'bg-brand-orange text-white shadow-orange-sm'
+                : 'bg-dark-900 text-gray-400 hover:text-white border border-dark-750'
+            }`}
+          >
+            <Bus className="w-4 h-4" />
+            <span>BUSSID Mods Inventory</span>
+            <span className="px-1.5 py-0.5 rounded-full text-[10px] bg-black/30 text-white font-mono">
+              {mods.length}
+            </span>
+          </button>
+
+          <button
+            onClick={() => setActiveTab('requests')}
+            className={`px-5 py-2.5 rounded-xl font-bold text-xs flex items-center gap-2 transition ${
+              activeTab === 'requests'
+                ? 'bg-brand-orange text-white shadow-orange-sm'
+                : 'bg-dark-900 text-gray-400 hover:text-white border border-dark-750'
+            }`}
+          >
+            <MessageSquare className="w-4 h-4" />
+            <span>Subscriber Requests</span>
+            {pendingRequestsCount > 0 ? (
+              <span className="px-2 py-0.5 rounded-full text-[10px] bg-red-500 text-white font-extrabold animate-pulse font-mono">
+                {pendingRequestsCount} NEW
+              </span>
+            ) : (
+              <span className="px-1.5 py-0.5 rounded-full text-[10px] bg-black/30 text-white font-mono">
+                {requests.length}
+              </span>
+            )}
+          </button>
+        </div>
+
+        {/* Tab 1: Mods Inventory Section */}
+        {activeTab === 'mods' && (
+          <div className="bg-dark-900 border border-dark-750 rounded-3xl overflow-hidden shadow-xl">
           <div className="p-4 sm:p-6 border-b border-dark-800 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
             <div className="relative flex-1 max-w-md">
               <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-brand-orange" />
@@ -597,6 +722,140 @@ export default function AdminClient() {
             </table>
           </div>
         </div>
+        )}
+
+        {/* Tab 2: Subscriber Mod Requests Section */}
+        {activeTab === 'requests' && (
+          <div className="bg-dark-900 border border-dark-750 rounded-3xl overflow-hidden shadow-xl space-y-4">
+            <div className="p-4 sm:p-6 border-b border-dark-800 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
+              <div className="relative flex-1 max-w-md">
+                <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-brand-orange" />
+                <input
+                  type="text"
+                  value={requestSearch}
+                  onChange={(e) => setRequestSearch(e.target.value)}
+                  placeholder="Search requests by mod name, user, handle..."
+                  className="w-full pl-10 pr-4 py-2 rounded-xl bg-dark-850 border border-dark-700 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-brand-orange"
+                />
+              </div>
+
+              {/* Status Filter Pills */}
+              <div className="flex flex-wrap items-center gap-1.5">
+                {(['all', 'pending', 'in_progress', 'completed', 'rejected'] as const).map((filterStatus) => (
+                  <button
+                    key={filterStatus}
+                    onClick={() => setRequestFilter(filterStatus)}
+                    className={`px-3 py-1.5 rounded-lg text-xs font-semibold capitalize transition ${
+                      requestFilter === filterStatus
+                        ? 'bg-brand-orange text-white shadow-sm'
+                        : 'bg-dark-850 hover:bg-dark-800 text-gray-400 hover:text-white border border-dark-700'
+                    }`}
+                  >
+                    {filterStatus === 'all'
+                      ? `All (${requests.length})`
+                      : filterStatus === 'in_progress'
+                      ? `In Progress (${requests.filter((r) => r.status === 'in_progress').length})`
+                      : `${filterStatus} (${requests.filter((r) => r.status === filterStatus).length})`}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {filteredRequests.length === 0 ? (
+              <div className="p-12 text-center text-gray-400">
+                <MessageSquare className="w-10 h-10 text-gray-600 mx-auto mb-3" />
+                <p className="text-sm font-semibold text-white">No requests found</p>
+                <p className="text-xs text-gray-500 mt-1">
+                  Subscriber requests submitted from the home page will appear here.
+                </p>
+              </div>
+            ) : (
+              <div className="overflow-x-auto">
+                <table className="w-full text-left text-xs">
+                  <thead className="bg-dark-850/80 border-b border-dark-800 text-gray-400 uppercase tracking-wider font-semibold">
+                    <tr>
+                      <th className="py-3.5 px-4">Requested Mod</th>
+                      <th className="py-3.5 px-4">Category</th>
+                      <th className="py-3.5 px-4">Requester</th>
+                      <th className="py-3.5 px-4">Date</th>
+                      <th className="py-3.5 px-4">Status & Action</th>
+                      <th className="py-3.5 px-4 text-right">Delete</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-dark-800">
+                    {filteredRequests.map((req) => (
+                      <tr key={req.id} className="hover:bg-dark-850/50 transition">
+                        <td className="py-3.5 px-4 max-w-xs">
+                          <p className="font-bold text-white text-sm">{req.modName}</p>
+                          {req.details && (
+                            <p className="text-[11px] text-gray-400 mt-1 italic line-clamp-2">
+                              &ldquo;{req.details}&rdquo;
+                            </p>
+                          )}
+                        </td>
+                        <td className="py-3.5 px-4 whitespace-nowrap">
+                          <span className="px-2.5 py-1 rounded-lg bg-dark-800 border border-dark-700 text-gray-300 font-medium">
+                            {req.category}
+                          </span>
+                        </td>
+                        <td className="py-3.5 px-4">
+                          <p className="font-semibold text-white">{req.requesterName}</p>
+                          {req.emailOrSocial && (
+                            <span className="text-[11px] text-brand-orange font-mono">
+                              {req.emailOrSocial}
+                            </span>
+                          )}
+                        </td>
+                        <td className="py-3.5 px-4 whitespace-nowrap text-gray-400 font-mono text-[11px]">
+                          {req.createdAt ? new Date(req.createdAt).toLocaleDateString() : 'Recent'}
+                        </td>
+                        <td className="py-3.5 px-4 whitespace-nowrap">
+                          <select
+                            value={req.status}
+                            onChange={(e) =>
+                              handleUpdateRequestStatus(req.id, e.target.value as ModRequest['status'])
+                            }
+                            className={`px-2.5 py-1.5 rounded-lg text-xs font-bold border focus:outline-none transition ${
+                              req.status === 'completed'
+                                ? 'bg-emerald-950/80 text-emerald-300 border-emerald-500/40'
+                                : req.status === 'in_progress'
+                                ? 'bg-sky-950/80 text-sky-300 border-sky-500/40'
+                                : req.status === 'rejected'
+                                ? 'bg-gray-900 text-gray-400 border-gray-700'
+                                : 'bg-amber-950/80 text-amber-300 border-amber-500/40'
+                            }`}
+                          >
+                            <option value="pending" className="bg-dark-900 text-amber-300">
+                              ⏳ Pending
+                            </option>
+                            <option value="in_progress" className="bg-dark-900 text-sky-300">
+                              🛠️ In Progress
+                            </option>
+                            <option value="completed" className="bg-dark-900 text-emerald-300">
+                              ✅ Completed
+                            </option>
+                            <option value="rejected" className="bg-dark-900 text-gray-400">
+                              ❌ Rejected
+                            </option>
+                          </select>
+                        </td>
+                        <td className="py-3.5 px-4 text-right whitespace-nowrap">
+                          <button
+                            onClick={() => handleDeleteRequest(req.id)}
+                            className="p-1.5 rounded-lg bg-dark-800 hover:bg-red-950 text-gray-400 hover:text-red-400 border border-dark-700 transition"
+                            title="Delete Request"
+                          >
+                            <Trash2 className="w-3.5 h-3.5" />
+                          </button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+          </div>
+        )}
       </div>
 
       {/* Add / Edit Mod Modal */}

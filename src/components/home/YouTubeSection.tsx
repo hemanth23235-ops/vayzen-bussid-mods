@@ -127,6 +127,71 @@ export default function YouTubeSection() {
               </a>
             </div>
           </div>
+
+          {/* 500 Subscribers Goal Progress Bar */}
+          {(() => {
+            const currentSubs = siteConfig.subscribersCount || 311;
+            const goalSubs = siteConfig.subscriberGoal || 500;
+            const progressPercent = Math.min(100, Math.round((currentSubs / goalSubs) * 100));
+            const remainingSubs = Math.max(0, goalSubs - currentSubs);
+
+            return (
+              <div className="mt-8 pt-6 border-t border-dark-800/80">
+                <div className="bg-dark-950/70 border border-dark-750/90 rounded-2xl p-4 sm:p-5 backdrop-blur-sm shadow-inner">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                    <div className="flex items-center gap-2.5">
+                      <span className="flex h-2.5 w-2.5 relative">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500"></span>
+                      </span>
+                      <span className="text-xs sm:text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
+                        <span>Road to {goalSubs} Subscribers</span>
+                        <span className="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-red-500/20 text-red-400 border border-red-500/30">
+                          {progressPercent}% Complete
+                        </span>
+                      </span>
+                    </div>
+
+                    <div className="text-xs text-gray-400 flex items-center gap-2">
+                      <span className="font-bold text-white text-sm">{currentSubs}</span>
+                      <span>/</span>
+                      <span className="font-semibold text-gray-400">{goalSubs} Subscribers</span>
+                      <span className="text-brand-orange font-bold text-[11px] bg-brand-orange/10 px-2 py-0.5 rounded-md border border-brand-orange/20">
+                        {remainingSubs} to go!
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Progress Bar Track */}
+                  <div className="relative w-full h-3.5 bg-dark-900 rounded-full overflow-hidden p-0.5 border border-dark-700/80 shadow-inner">
+                    <div
+                      className="h-full rounded-full bg-gradient-to-r from-red-600 via-brand-orange to-amber-400 shadow-lg shadow-orange-500/30 transition-all duration-1000 ease-out relative overflow-hidden"
+                      style={{ width: `${progressPercent}%` }}
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent animate-shimmer" />
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mt-2.5 text-[11px] text-gray-400">
+                    <span className="flex items-center gap-1.5">
+                      <span>🎉</span>
+                      <span>
+                        <strong className="text-gray-300">Special Community Milestone:</strong> Reaching 500 subscribers unlocks exclusive private BUSSID bus & truck mods!
+                      </span>
+                    </span>
+                    <a
+                      href={siteConfig.subscribeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-bold text-red-400 hover:text-red-300 transition hover:underline inline-flex items-center gap-1 shrink-0"
+                    >
+                      Subscribe & Support &rarr;
+                    </a>
+                  </div>
+                </div>
+              </div>
+            );
+          })()}
         </div>
 
         {/* Latest Videos Section */}

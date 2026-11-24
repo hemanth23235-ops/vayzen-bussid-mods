@@ -4,6 +4,7 @@ import FeaturedModsSection from '@/components/home/FeaturedModsSection';
 import CategorySection from '@/components/home/CategorySection';
 import LatestAndPopularSection from '@/components/home/LatestAndPopularSection';
 import YouTubeSection from '@/components/home/YouTubeSection';
+import ModRequestSection from '@/components/home/ModRequestSection';
 import { getFeaturedMods, getLatestMods, getMostDownloadedMods } from '@/lib/mods';
 import { siteConfig } from '@/config/site';
 
@@ -50,6 +51,9 @@ export default async function HomePage() {
         latestMods={latestMods}
         mostDownloadedMods={mostDownloadedMods}
       />
+
+      {/* Subscriber Community Mod Request Form */}
+      <ModRequestSection />
 
       {/* YouTube Channel & Video Showcase */}
       <YouTubeSection />

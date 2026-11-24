@@ -11,6 +11,8 @@ export const siteConfig: SiteConfig = {
   channelUrl: 'https://www.youtube.com/@VayZenXPlayz',
   subscribeUrl: 'https://www.youtube.com/@VayZenXPlayz?sub_confirmation=1',
   subscribersCountText: '311',
+  subscribersCount: 311,
+  subscriberGoal: 500,
   videosCountText: '240 Videos',
   discordUrl: 'https://discord.gg/3M2TCvVZp',
   instagramUrl: 'https://instagram.com/vayzenxplayz',
@@ -29,5 +31,6 @@ export const navItems = [
   { name: 'Trucks', href: '/mods?category=bussid-trucks' },
   { name: 'Maps', href: '/mods?category=bussid-maps' },
   { name: 'YouTube', href: '/#youtube-section' },
+  { name: 'Request Mod', href: '/#mod-request-section' },
   { name: 'About', href: '/about' },
 ];

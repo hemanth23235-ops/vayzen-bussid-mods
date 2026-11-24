@@ -73,4 +73,17 @@ export interface SiteConfig {
   telegramUrl: string;
   contactEmail: string;
   turnstileSiteKey?: string;
+  subscribersCount?: number;
+  subscriberGoal?: number;
+}
+
+export interface ModRequest {
+  id: string;
+  modName: string;
+  category: string;
+  requesterName: string;
+  emailOrSocial?: string;
+  details?: string;
+  status: 'pending' | 'in_progress' | 'completed' | 'rejected';
+  createdAt: string;
 }
