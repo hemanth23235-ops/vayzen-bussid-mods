@@ -17,6 +17,7 @@ export const siteConfig: SiteConfig = {
   twitterUrl: 'https://twitter.com/vayzenxplayz',
   telegramUrl: 'https://t.me/vayzenxplayzmods',
   contactEmail: 'contact.vayzenxplayz@gmail.com',
+  turnstileSiteKey: '0x4AAAAAAGQDoaUGZjHRfoWu',
 };
 
 export const navItems = [

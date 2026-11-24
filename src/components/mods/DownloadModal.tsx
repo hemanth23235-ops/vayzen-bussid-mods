@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import {
   Download,
@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import { ModItem } from '@/types';
 import { formatNumber } from '@/lib/utils';
+import CloudflareTurnstile from '@/components/common/CloudflareTurnstile';
 
 interface DownloadModalProps {
   mod: ModItem | null;
@@ -26,6 +27,17 @@ export default function DownloadModal({ mod, isOpen, onClose }: DownloadModalPro
   const [copied, setCopied] = useState(false);
   const [downloadStarted, setDownloadStarted] = useState(false);
   const [countdown, setCountdown] = useState<number | null>(null);
+  const [isVerified, setIsVerified] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+
+  // Reset verification state when modal opens/closes
+  useEffect(() => {
+    if (isOpen) {
+      setIsVerified(false);
+      setDownloadStarted(false);
+      setCountdown(null);
+    }
+  }, [isOpen, mod?.slug]);
 
   if (!isOpen || !mod) return null;
 
@@ -131,21 +143,58 @@ export default function DownloadModal({ mod, isOpen, onClose }: DownloadModalPro
           </div>
         </div>
 
+        {/* Cloudflare Bot Verification */}
+        <div className="p-3.5 rounded-xl bg-dark-850/90 border border-dark-750 flex flex-col items-center justify-center space-y-2.5">
+          <div className="flex items-center gap-1.5 text-xs">
+            <ShieldCheck className={`w-4 h-4 ${isVerified ? 'text-emerald-400' : 'text-sky-400'}`} />
+            <span className="font-semibold text-white">
+              {isVerified ? 'Cloudflare Verification Passed' : 'Cloudflare Human Verification'}
+            </span>
+          </div>
+
+          {!isVerified ? (
+            <CloudflareTurnstile
+              onSuccess={(token) => {
+                setIsVerified(true);
+                setTurnstileToken(token);
+              }}
+            />
+          ) : (
+            <div className="flex items-center gap-2 py-1.5 px-3 rounded-lg bg-emerald-950/40 border border-emerald-500/40 text-emerald-400 text-xs font-semibold animate-in fade-in">
+              <Check className="w-4 h-4" />
+              <span>Identity Verified. Direct download unlocked!</span>
+            </div>
+          )}
+        </div>
+
         {/* Download Action Buttons */}
         <div className="space-y-2.5 pt-1">
           <button
             onClick={startDownload}
-            disabled={countdown !== null}
-            className="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-brand-orange to-red-600 hover:from-brand-orange-hover hover:to-red-500 text-white font-bold text-base flex items-center justify-center gap-2 shadow-orange-glow transition transform hover:-translate-y-0.5 disabled:opacity-75"
+            disabled={!isVerified || countdown !== null}
+            className={`w-full py-3.5 px-4 rounded-xl font-bold text-base flex items-center justify-center gap-2 transition transform ${
+              isVerified
+                ? 'bg-gradient-to-r from-brand-orange to-red-600 hover:from-brand-orange-hover hover:to-red-500 text-white shadow-orange-glow hover:-translate-y-0.5'
+                : 'bg-dark-800 text-gray-400 border border-dark-700 cursor-not-allowed opacity-75'
+            }`}
           >
-            <Download className="w-5 h-5 animate-bounce" />
-            <span>
-              {countdown !== null
-                ? `Preparing Direct Link in ${countdown}s...`
-                : downloadStarted
-                ? 'Download Again (Direct Mirror)'
-                : 'Download BUSSID Mod'}
-            </span>
+            {isVerified ? (
+              <>
+                <Download className="w-5 h-5 animate-bounce" />
+                <span>
+                  {countdown !== null
+                    ? `Preparing Direct Link in ${countdown}s...`
+                    : downloadStarted
+                    ? 'Download Again (Direct Mirror)'
+                    : 'Download BUSSID Mod'}
+                </span>
+              </>
+            ) : (
+              <>
+                <ShieldCheck className="w-5 h-5 text-sky-400 animate-pulse" />
+                <span>Verify Cloudflare Check Above to Download</span>
+              </>
+            )}
           </button>
 
           {/* Backup Download Mirror */}

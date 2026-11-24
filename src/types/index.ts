@@ -72,4 +72,5 @@ export interface SiteConfig {
   twitterUrl: string;
   telegramUrl: string;
   contactEmail: string;
+  turnstileSiteKey?: string;
 }

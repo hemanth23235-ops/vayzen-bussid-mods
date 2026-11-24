@@ -25,6 +25,7 @@ import {
 import { ModItem } from '@/types';
 import { formatNumber, formatDate } from '@/lib/utils';
 import ModCard from '@/components/mods/ModCard';
+import DownloadModal from '@/components/mods/DownloadModal';
 import { siteConfig } from '@/config/site';
 import YouTubeIcon from '@/components/common/YouTubeIcon';
 
@@ -36,6 +37,7 @@ interface ModDetailClientProps {
 export default function ModDetailClient({ mod, relatedMods }: ModDetailClientProps) {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [copied, setCopied] = useState(false);
+  const [downloadModalOpen, setDownloadModalOpen] = useState(false);
   const [downloading, setDownloading] = useState(false);
   const [downloadCount, setDownloadCount] = useState(mod.downloadsCount);
   const [countdown, setCountdown] = useState<number | null>(null);
@@ -303,18 +305,11 @@ export default function ModDetailClient({ mod, relatedMods }: ModDetailClientPro
 
               {/* Download CTA Button */}
               <button
-                onClick={handleDownload}
-                disabled={countdown !== null}
-                className="w-full py-4 px-4 rounded-xl bg-gradient-to-r from-brand-orange to-red-600 hover:from-brand-orange-hover hover:to-red-500 text-white font-extrabold text-base flex items-center justify-center gap-2 shadow-orange-glow transition transform hover:-translate-y-0.5 disabled:opacity-75"
+                onClick={() => setDownloadModalOpen(true)}
+                className="w-full py-4 px-4 rounded-xl bg-gradient-to-r from-brand-orange to-red-600 hover:from-brand-orange-hover hover:to-red-500 text-white font-extrabold text-base flex items-center justify-center gap-2 shadow-orange-glow transition transform hover:-translate-y-0.5"
               >
                 <Download className="w-5 h-5 animate-bounce" />
-                <span>
-                  {countdown !== null
-                    ? `Generating Mirror (${countdown}s)...`
-                    : downloading
-                    ? 'Download Started'
-                    : 'Download Mod Now'}
-                </span>
+                <span>Download Mod Now</span>
               </button>
 
               {/* Backup Mirror */}
@@ -448,6 +443,13 @@ export default function ModDetailClient({ mod, relatedMods }: ModDetailClientPro
           </div>
         )}
       </div>
+
+      {/* Cloudflare Turnstile Download Verification Modal */}
+      <DownloadModal
+        mod={mod}
+        isOpen={downloadModalOpen}
+        onClose={() => setDownloadModalOpen(false)}
+      />
     </div>
   );
 }
