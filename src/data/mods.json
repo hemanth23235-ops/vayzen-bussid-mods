@@ -1,5 +1,70 @@
 [
   {
+    "id": "ashok-leyland-bs6",
+    "slug": "ashok-leyland-bs6",
+    "name": "Ashok Leyland BS6 Bus Mod",
+    "game": "BUSSID",
+    "category": "BUSSID Buses",
+    "shortDescription": "Official Shyamoli Ashok Leyland BS6 luxury sleeper bus mod for Bus Simulator Indonesia with realistic engine sounds and smooth driving.",
+    "description": "Experience the heavy-duty power and comfort of the Ashok Leyland BS6 Shyamoli Luxury Coach in Bus Simulator Indonesia. Features realistic Ashok Leyland H-Series BS6 diesel engine sounds, working air suspension, full 3-button animations (passenger doors, luggage compartment, driver cabin window), custom LED lighting, authentic Shyamoli Paribahan liveries, and high-speed highway stability.",
+    "thumbnailUrl": "/images/mods/ashok-leyland-bs6.jpg",
+    "screenshots": [
+      "/images/mods/ashok-leyland-bs6.jpg"
+    ],
+    "version": "BS6 Edition",
+    "supportedGameVersion": "BUSSID v4.0.4 - v4.3.4+",
+    "fileSize": "22 MB",
+    "uploadDate": "2026-11-24",
+    "downloadUrl": "https://sub4unlock.com/S/Z7bvw",
+    "author": "VayZenXPlayz",
+    "downloadsCount": 980,
+    "likesCount": 195,
+    "rating": 5,
+    "isFeatured": true,
+    "isTrending": true,
+    "badge": "NEW",
+    "youtubeVideoId": "Kuw5tGrY69s",
+    "features": [
+      "Authentic Ashok Leyland BS6 diesel engine sound loops",
+      "Full 3-stage interactive animations (Doors & Luggage Compartment)",
+      "Detailed sleeper & seater passenger cabin with reading lights",
+      "Working dashboard speedometer & illuminated dials",
+      "Realistic air brake hiss & reverse warning alarm",
+      "High-speed highway gear ratio & smooth air ride"
+    ],
+    "requirements": [
+      "Bus Simulator Indonesia version 4.0.4 or higher installed",
+      "Minimum 3GB RAM on Android device",
+      "30MB free storage space for mod & livery files"
+    ],
+    "installationGuide": [
+      {
+        "step": 1,
+        "title": "Download Mod File",
+        "instruction": "Click the Download button below to complete Cloudflare verification and unlock your Ashok Leyland BS6 mod file."
+      },
+      {
+        "step": 2,
+        "title": "Move to BUSSID/Mods Directory",
+        "instruction": "Open ZArchiver or your file manager, locate the downloaded file, and move it to: Internal Storage > BUSSID > Mods."
+      },
+      {
+        "step": 3,
+        "title": "Activate in BUSSID Garage",
+        "instruction": "Launch Bus Simulator Indonesia, open Garage (Garasi), navigate to the Ashok Leyland BS6 coach and tap 'Use' (Pakai)!"
+      }
+    ],
+    "tags": [
+      "bussid",
+      "buses",
+      "ashok leyland",
+      "shyamoli",
+      "bs6",
+      "sleeper coach",
+      "tourist coach"
+    ]
+  },
+  {
     "id": "volvo-9600s-sleeper",
     "slug": "volvo-9600s-sleeper",
     "name": "VOLVO 9600s Sleeper Cum Seater Bus Mod",
