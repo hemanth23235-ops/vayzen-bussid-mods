@@ -1,5 +1,71 @@
 [
   {
+    "id": "volvo-9600s-sleeper",
+    "slug": "volvo-9600s-sleeper",
+    "name": "VOLVO 9600s Sleeper Cum Seater Bus Mod",
+    "game": "BUSSID",
+    "category": "BUSSID Buses",
+    "shortDescription": "Official Express Line Volvo 9600s Sleeper Cum Seater luxury bus mod for Bus Simulator Indonesia with realistic interior and highway suspension.",
+    "description": "Take command of the flagship Volvo 9600s Sleeper Cum Seater luxury coach in Bus Simulator Indonesia. Decorated with the realistic Express Line livery, this mod features high-definition exterior textures, dual-deck sleeper and seater passenger cabins, working dashboard dials, interactive animations (passenger doors, luggage bins & driver window), custom LED lighting, and realistic Volvo heavy diesel engine audio.",
+    "thumbnailUrl": "/images/mods/volvo-9600s-sleeper.jpg",
+    "screenshots": [
+      "/images/mods/volvo-9600s-sleeper.jpg"
+    ],
+    "version": "9600s (BS6)",
+    "supportedGameVersion": "BUSSID v4.0.4 - v4.3.4+",
+    "fileSize": "34.93 MB",
+    "uploadDate": "2026-11-24",
+    "downloadUrl": "https://sub4unlock.com/S/O7bgq",
+    "author": "VayZenXPlayz",
+    "downloadsCount": 1150,
+    "likesCount": 240,
+    "rating": 5,
+    "isFeatured": true,
+    "isTrending": true,
+    "badge": "NEW",
+    "youtubeVideoId": "MRX6tcNMF4M",
+    "features": [
+      "Ultra-luxury Volvo 9600s aerodynamic multi-axle body styling",
+      "Dual-deck Sleeper Cum Seater passenger layout with ambient cabin lights",
+      "Authentic Volvo heavy diesel engine audio loops and air brake hiss",
+      "Full 3-stage interactive animations (Doors, Luggage & Window)",
+      "Express Line realistic livery with high-definition branding",
+      "Smooth high-speed highway handling and air suspension ride"
+    ],
+    "requirements": [
+      "Bus Simulator Indonesia v4.0.4 or higher installed",
+      "Minimum 3GB RAM on Android device",
+      "40MB free storage space for mod extraction"
+    ],
+    "installationGuide": [
+      {
+        "step": 1,
+        "title": "Download Mod File",
+        "instruction": "Click the Download button below to complete Cloudflare verification and unlock your Volvo 9600s mod file."
+      },
+      {
+        "step": 2,
+        "title": "Move to BUSSID/Mods Directory",
+        "instruction": "Open ZArchiver or your file manager, locate the downloaded file, and move it to: Internal Storage > BUSSID > Mods."
+      },
+      {
+        "step": 3,
+        "title": "Activate in BUSSID Garage",
+        "instruction": "Launch Bus Simulator Indonesia, open Garage (Garasi), navigate to the Volvo 9600s Sleeper coach and tap 'Use' (Pakai)!"
+      }
+    ],
+    "tags": [
+      "bussid",
+      "buses",
+      "volvo",
+      "volvo 9600s",
+      "express line",
+      "sleeper seater",
+      "luxury bus",
+      "kerala bus"
+    ]
+  },
+  {
     "id": "zedone-bs6-bus",
     "slug": "zedone-bs6-bus",
     "name": "ZEDONE BS6 Luxury Bus Mod",
