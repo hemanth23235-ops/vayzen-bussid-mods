@@ -3,6 +3,9 @@ import { getAllRequests, createRequest, updateRequestStatus, deleteRequest } fro
 import { isUserAdmin } from '@/lib/auth';
 import { ModRequest } from '@/types';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 // GET: Fetch mod requests
 export async function GET(req: NextRequest) {
   try {
@@ -20,11 +23,14 @@ export async function GET(req: NextRequest) {
       requests = requests.slice(0, limit);
     }
 
-    return NextResponse.json({
+    const response = NextResponse.json({
       success: true,
       count: requests.length,
       requests,
     });
+
+    response.headers.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+    return response;
   } catch (err: any) {
     return NextResponse.json(
       { success: false, message: err?.message || 'Error fetching requests' },
@@ -33,11 +39,37 @@ export async function GET(req: NextRequest) {
   }
 }
 
-// POST: Public submission for visitors / subscribers
+// POST: Public submission OR Admin Action
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
 
+    // Support admin actions via POST for 100% proxy compatibility
+    if (body.action === 'update_status') {
+      const isAdmin = await isUserAdmin();
+      if (!isAdmin) {
+        return NextResponse.json(
+          { success: false, message: 'Unauthorized. Admin login required.' },
+          { status: 401 }
+        );
+      }
+      const result = await updateRequestStatus(body.id, body.status);
+      return NextResponse.json(result);
+    }
+
+    if (body.action === 'delete') {
+      const isAdmin = await isUserAdmin();
+      if (!isAdmin) {
+        return NextResponse.json(
+          { success: false, message: 'Unauthorized. Admin login required.' },
+          { status: 401 }
+        );
+      }
+      const result = await deleteRequest(body.id);
+      return NextResponse.json(result);
+    }
+
+    // Normal visitor mod request submission
     if (!body.modName || !body.modName.trim()) {
       return NextResponse.json(
         { success: false, message: 'Mod name or vehicle model is required.' },

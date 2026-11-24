@@ -24,6 +24,7 @@ import {
   MessageSquare,
   Clock,
   CheckCheck,
+  RefreshCw,
 } from 'lucide-react';
 import { ModItem, ModRequest } from '@/types';
 import { categories } from '@/data/categories';
@@ -100,53 +101,73 @@ export default function AdminClient() {
     }
   };
 
+  const [refreshingRequests, setRefreshingRequests] = useState(false);
+
   const loadRequests = async () => {
     try {
-      const res = await fetch('/api/requests');
+      setRefreshingRequests(true);
+      const res = await fetch(`/api/requests?t=${Date.now()}`, { cache: 'no-store' });
       const data = await res.json();
-      if (data.success) {
+      if (data.success && Array.isArray(data.requests)) {
         setRequests(data.requests);
       }
     } catch (err) {
       console.error('Failed to load subscriber requests:', err);
+    } finally {
+      setRefreshingRequests(false);
     }
   };
 
   const handleUpdateRequestStatus = async (id: string, status: ModRequest['status']) => {
+    // 1. Optimistic update in UI state immediately
+    setRequests((prev) =>
+      prev.map((r) => (r.id === id ? { ...r, status } : r))
+    );
+
     try {
       const res = await fetch('/api/requests', {
-        method: 'PATCH',
+        method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ id, status }),
+        body: JSON.stringify({ action: 'update_status', id, status }),
       });
       const data = await res.json();
       if (data.success) {
-        setStatusMessage({ text: `Request status updated to ${status}`, type: 'success' });
-        loadRequests();
+        setStatusMessage({ text: `Request marked as ${status.replace('_', ' ')}`, type: 'success' });
       } else {
         setStatusMessage({ text: data.message || 'Failed to update request', type: 'error' });
+        loadRequests();
       }
     } catch {
       setStatusMessage({ text: 'Network error updating request', type: 'error' });
+      loadRequests();
     }
+    setTimeout(() => setStatusMessage(null), 3500);
   };
 
   const handleDeleteRequest = async (id: string) => {
     if (!confirm('Are you sure you want to delete this subscriber request?')) return;
+
+    // 1. Optimistic removal in UI state immediately
+    setRequests((prev) => prev.filter((r) => r.id !== id));
+
     try {
-      const res = await fetch(`/api/requests?id=${encodeURIComponent(id)}`, {
-        method: 'DELETE',
+      const res = await fetch('/api/requests', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'delete', id }),
       });
       const data = await res.json();
       if (data.success) {
         setStatusMessage({ text: 'Subscriber request deleted successfully', type: 'success' });
-        loadRequests();
       } else {
         setStatusMessage({ text: data.message || 'Failed to delete request', type: 'error' });
+        loadRequests();
       }
     } catch {
       setStatusMessage({ text: 'Network error deleting request', type: 'error' });
+      loadRequests();
     }
+    setTimeout(() => setStatusMessage(null), 3500);
   };
 
   const handleLogin = async (e: React.FormEvent) => {
@@ -739,8 +760,23 @@ export default function AdminClient() {
                 />
               </div>
 
-              {/* Status Filter Pills */}
+              {/* Status Filter Pills & Refresh */}
               <div className="flex flex-wrap items-center gap-1.5">
+                <button
+                  type="button"
+                  onClick={loadRequests}
+                  disabled={refreshingRequests}
+                  className="px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-dark-850 hover:bg-dark-800 text-gray-300 hover:text-white border border-dark-700 flex items-center gap-1.5 transition"
+                  title="Check for new subscriber requests"
+                >
+                  <RefreshCw
+                    className={`w-3.5 h-3.5 text-brand-orange ${
+                      refreshingRequests ? 'animate-spin' : ''
+                    }`}
+                  />
+                  <span>Refresh</span>
+                </button>
+
                 {(['all', 'pending', 'in_progress', 'completed', 'rejected'] as const).map((filterStatus) => (
                   <button
                     key={filterStatus}
