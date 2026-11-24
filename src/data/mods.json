@@ -1,5 +1,71 @@
 [
   {
+    "id": "zedone-bs6-bus",
+    "slug": "zedone-bs6-bus",
+    "name": "ZEDONE BS6 Luxury Bus Mod",
+    "game": "BUSSID",
+    "category": "BUSSID Buses",
+    "shortDescription": "New ZEDONE BS6 Luxury tourist bus mod for Bus Simulator Indonesia featuring ultra-realistic interior, smooth driving, and animated features.",
+    "description": "Get behind the wheel of the all-new ZEDONE BS6 Luxury Bus in Bus Simulator Indonesia. Built with high-detail 3D exterior modeling, custom Kerala tourist bus paint scheme, rooftop auxiliary fog lamps, full passenger cabin interior with LED lighting, interactive door animations, realistic physics, and smooth highway handling.",
+    "thumbnailUrl": "/images/mods/zedone-bs6-bus.jpg",
+    "screenshots": [
+      "/images/mods/zedone-bs6-bus.jpg"
+    ],
+    "version": "v1.0 (BS6)",
+    "supportedGameVersion": "BUSSID v4.0.4 - v4.3.4+",
+    "fileSize": "42.8 MB",
+    "uploadDate": "2024-11-24",
+    "downloadUrl": "https://sub4unlock.com/S/z7beq",
+    "author": "VayZenXPlayz",
+    "downloadsCount": 890,
+    "likesCount": 174,
+    "rating": 5,
+    "isFeatured": true,
+    "isTrending": true,
+    "badge": "HOT",
+    "youtubeVideoId": "SgOzOb79R8k",
+    "features": [
+      "Ultra-detailed real interior cabin & passenger seats",
+      "Smooth high-speed driving physics & realistic steering",
+      "High quality 3D mesh with rooftop auxiliary spotlights",
+      "Interactive 3-stage animations (Doors, Cabin & Window)",
+      "Crisp Kerala tourist bus livery with custom stickers",
+      "Realistic diesel turbo whistle and air brake sound"
+    ],
+    "requirements": [
+      "Bus Simulator Indonesia v4.0.4 or higher installed",
+      "Minimum 3GB RAM on Android device",
+      "50MB free storage space for mod extraction"
+    ],
+    "installationGuide": [
+      {
+        "step": 1,
+        "title": "Download Mod File",
+        "instruction": "Click the Download button below to unlock and download your ZEDONE BS6 Bus mod file."
+      },
+      {
+        "step": 2,
+        "title": "Move to BUSSID/Mods Directory",
+        "instruction": "Open ZArchiver or your file manager, locate the downloaded file, and move it to: Internal Storage > BUSSID > Mods."
+      },
+      {
+        "step": 3,
+        "title": "Activate in BUSSID Garage",
+        "instruction": "Launch Bus Simulator Indonesia, open Garage (Garasi), navigate to the ZEDONE BS6 Luxury Bus and tap 'Use' (Pakai)!"
+      }
+    ],
+    "tags": [
+      "bussid",
+      "buses",
+      "zedone",
+      "zedone bs6",
+      "luxury bus",
+      "kerala bus",
+      "tourist bus",
+      "bussid bus mod"
+    ]
+  },
+  {
     "id": "bharatbenz-bs6",
     "slug": "bharatbenz-bs6",
     "name": "BHARATBENZ GLIDER Z+ BS6 Luxury Coach",
