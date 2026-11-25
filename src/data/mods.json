@@ -1,5 +1,72 @@
 [
   {
+    "id": "ashok-leyland-livery-pack",
+    "slug": "ashok-leyland-livery-pack",
+    "name": "Ashok Leyland Bus Livery Pack (12 Unique Styles)",
+    "game": "BUSSID",
+    "category": "BUSSID Liveries",
+    "shortDescription": "Official 4K Ultra-HD 12-in-1 livery collection for the Ashok Leyland Bus Mod including Shyamoli, Hilight, Punchiry, Murahara, Mookambika & Flixbus.",
+    "description": "Upgrade your Ashok Leyland bus in Bus Simulator Indonesia with this exclusive 12-in-1 Ultra-HD 4K Livery Pack. Features 12 distinct custom paint schemes including Shyamoli S.P, Hilight Roadlinks, Punchiry Orange & Blue, Murahara White, Murahara Cream, Mookambika Blue, Mookambika Pink, Barde Express, Flixbus Green, and November Travels. Includes high-resolution transparent glass stickers, custom LED badge textures, and crisp side graphics with zero pixelation.",
+    "thumbnailUrl": "/images/mods/ashok-leyland-livery-pack.jpg",
+    "screenshots": [
+      "/images/mods/ashok-leyland-livery-pack.jpg"
+    ],
+    "version": "12-in-1 HD Pack",
+    "supportedGameVersion": "BUSSID v4.0.4 - v4.3.4+",
+    "fileSize": "36.40 MB",
+    "uploadDate": "2026-11-25",
+    "downloadUrl": "https://sub4unlock.com/S/87cmx",
+    "author": "VayZenXPlayz",
+    "downloadsCount": 1420,
+    "likesCount": 310,
+    "rating": 5,
+    "isFeatured": true,
+    "isTrending": true,
+    "badge": "NEW",
+    "features": [
+      "12 Complete high-definition custom bus liveries in one download",
+      "Features Shyamoli, Hilight, Punchiry, Murahara, Mookambika, Flixbus & more",
+      "Ultra-crisp 4K textures with transparent glass decals",
+      "Custom nameplates, route boards, and bumper graphics",
+      "Zero texture blur or stretching on Ashok Leyland bus models",
+      "Easy 1-tap installation via BUSSID Garage livery menu"
+    ],
+    "requirements": [
+      "Bus Simulator Indonesia version 4.0.4 or higher installed",
+      "Ashok Leyland BS6 bus mod equipped in your garage",
+      "40MB free storage space for 4K PNG liveries"
+    ],
+    "installationGuide": [
+      {
+        "step": 1,
+        "title": "Download Livery Pack",
+        "instruction": "Click the Download button below to complete verification and unlock your Ashok Leyland 12-in-1 livery pack."
+      },
+      {
+        "step": 2,
+        "title": "Extract Livery PNG Files",
+        "instruction": "Open ZArchiver or your file manager, extract the downloaded zip to your Pictures or Download folder."
+      },
+      {
+        "step": 3,
+        "title": "Equip in BUSSID Garage",
+        "instruction": "Launch Bus Simulator Indonesia, open Garage (Garasi) > Paint/Livery icon > Browse Livery, select Device Gallery, choose your favorite style and tap Apply!"
+      }
+    ],
+    "tags": [
+      "bussid",
+      "liveries",
+      "ashok leyland",
+      "livery pack",
+      "shyamoli",
+      "hilight",
+      "punchiry",
+      "murahara",
+      "mookambika",
+      "flixbus"
+    ]
+  },
+  {
     "id": "scania-k410-multiaxle",
     "slug": "scania-k410-multiaxle",
     "name": "SCANIA K410 Multi-axle Bus Mod",
