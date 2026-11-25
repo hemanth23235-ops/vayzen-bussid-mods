@@ -1,12 +1,9 @@
 export type GameCategory =
   | 'BUSSID Buses'
-  | 'BUSSID Trucks'
-  | 'BUSSID Cars'
-  | 'BUSSID Maps'
   | 'BUSSID Liveries'
-  | 'BUSSID DJ Horns'
-  | 'BUSSID Bikes'
-  | 'BUSSID Traffic & OBB';
+  | 'BUSSID Cars'
+  | 'BUSSID Trucks'
+  | 'BUSSID Maps';
 
 export type GameName = 'BUSSID';
 

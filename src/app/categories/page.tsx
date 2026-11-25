@@ -19,7 +19,7 @@ import {
 export const metadata: Metadata = {
   title: 'BUSSID Mod Categories & Collections',
   description:
-    'Browse Bus Simulator Indonesia mods by category: Kerala tourist buses, trucks, 4x4 cars, offroad hill ghat maps, 4K liveries, and Basuri DJ horns.',
+    'Browse Bus Simulator Indonesia mods by category: Kerala tourist buses, 4K liveries, 4x4 cars, trucks, and offroad hill ghat maps.',
 };
 
 const iconMap: Record<string, any> = {
@@ -62,12 +62,12 @@ export default async function CategoriesPage() {
             BUSSID Categories
           </h1>
           <p className="text-sm text-gray-400 mt-1 max-w-2xl">
-            Choose your category below to explore tourist buses, heavy dump trucks, 4x4 cars, hill climb maps, liveries, and DJ sound packs.
+            Choose your category below to explore tourist buses, 4K liveries, 4x4 cars, heavy dump trucks, and hill climb maps.
           </p>
         </div>
 
         {/* Categories Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {categoryWithCounts.map((cat) => {
             const Icon = iconMap[cat.iconName] || Bus;
             return (

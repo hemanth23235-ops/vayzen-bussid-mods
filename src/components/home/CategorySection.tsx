@@ -42,7 +42,7 @@ export default function CategorySection() {
               Explore BUSSID Categories
             </h2>
             <p className="text-sm text-gray-400 mt-1">
-              Find Kerala tourist buses, heavy tippers, 4x4 Thar, ghat maps, 4K liveries & Basuri horns.
+              Find Kerala tourist buses, 4K liveries, 4x4 cars, heavy trucks, and offroad hill maps.
             </p>
           </div>
 
@@ -56,7 +56,7 @@ export default function CategorySection() {
         </div>
 
         {/* Categories Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
           {categories.map((cat) => {
             const Icon = iconMap[cat.iconName] || Bus;
             return (

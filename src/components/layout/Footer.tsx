@@ -139,31 +139,31 @@ export default function Footer() {
 
           {/* Top BUSSID Categories */}
           <div className="space-y-3">
-            <h4 className="text-white font-bold tracking-wider text-xs uppercase">Popular Categories</h4>
+            <h4 className="text-white font-bold tracking-wider text-xs uppercase">Categories</h4>
             <ul className="space-y-2 text-xs">
               <li>
                 <Link href="/mods?category=bussid-buses" className="hover:text-brand-orange transition">
-                  Kerala Tourist Buses
+                  BUSSID Buses
+                </Link>
+              </li>
+              <li>
+                <Link href="/mods?category=bussid-liveries" className="hover:text-brand-orange transition">
+                  BUSSID Liveries
                 </Link>
               </li>
               <li>
                 <Link href="/mods?category=bussid-cars" className="hover:text-brand-orange transition">
-                  Mahindra Thar & SUVs
+                  BUSSID Cars
                 </Link>
               </li>
               <li>
                 <Link href="/mods?category=bussid-trucks" className="hover:text-brand-orange transition">
-                  Tata Signa & Heavy Lorries
+                  BUSSID Trucks
                 </Link>
               </li>
               <li>
                 <Link href="/mods?category=bussid-maps" className="hover:text-brand-orange transition">
-                  Wayanad Ghat Hill Maps
-                </Link>
-              </li>
-              <li>
-                <Link href="/mods?category=bussid-horns" className="hover:text-brand-orange transition">
-                  Basuri V3 & DJ Horns
+                  BUSSID Maps
                 </Link>
               </li>
             </ul>

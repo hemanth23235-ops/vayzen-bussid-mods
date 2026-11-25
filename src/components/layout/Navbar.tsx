@@ -44,12 +44,13 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'Home', href: '/' },
-    { name: 'Mods', href: '/mods' },
-    { name: 'Categories', href: '/categories' },
+    { name: 'All Mods', href: '/mods' },
     { name: 'Buses', href: '/mods?category=bussid-buses' },
-    { name: 'Cars & 4x4', href: '/mods?category=bussid-cars' },
+    { name: 'Livery', href: '/mods?category=bussid-liveries' },
+    { name: 'Cars', href: '/mods?category=bussid-cars' },
     { name: 'Trucks', href: '/mods?category=bussid-trucks' },
-    { name: 'About', href: '/about' },
+    { name: 'Maps', href: '/mods?category=bussid-maps' },
+    { name: 'Request Mod', href: '/#mod-request-section' },
     { name: 'YouTube', href: '/#youtube-section' },
   ];
 

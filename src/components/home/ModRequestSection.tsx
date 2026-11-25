@@ -23,11 +23,10 @@ import { ModRequest } from '@/types';
 
 const CATEGORIES = [
   'BUSSID Buses',
-  'BUSSID Trucks',
-  'BUSSID Cars',
-  'BUSSID Maps',
   'BUSSID Liveries',
-  'BUSSID DJ Horns',
+  'BUSSID Cars',
+  'BUSSID Trucks',
+  'BUSSID Maps',
 ];
 
 const LOCAL_STORAGE_KEY = 'vayzen_my_mod_requests';
