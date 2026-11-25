@@ -20,7 +20,14 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [currentQuery, setCurrentQuery] = useState('');
   const pathname = usePathname();
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setCurrentQuery(window.location.search);
+    }
+  }, [pathname]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,9 +62,13 @@ export default function Navbar() {
   ];
 
   const isActive = (href: string) => {
-    if (href === '/') return pathname === '/';
+    if (href === '/') return pathname === '/' && !currentQuery;
     if (href.startsWith('/#')) return false;
-    return pathname.startsWith(href.split('?')[0]);
+    const [path, query] = href.split('?');
+    if (query) {
+      return pathname === path && currentQuery.includes(query);
+    }
+    return pathname === path && (!currentQuery || !currentQuery.includes('category='));
   };
 
   return (
