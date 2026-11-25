@@ -1,5 +1,70 @@
 [
   {
+    "id": "scania-k410-multiaxle",
+    "slug": "scania-k410-multiaxle",
+    "name": "SCANIA K410 Multi-axle Bus Mod",
+    "game": "BUSSID",
+    "category": "BUSSID Buses",
+    "shortDescription": "Official SCANIA K410 Multi-Axle Jetbus 5 luxury bus mod for Bus Simulator Indonesia with ultra-detailed interior, powerful engine, and realistic handling.",
+    "description": "Drive the ultimate high-speed highway cruiser — the SCANIA K410 Multi-Axle Jetbus 5 luxury coach in Bus Simulator Indonesia. Engineered for long-haul express routes, this premium bus mod features high-definition Jetbus 5 bodywork, detailed driver cockpit and passenger seating, full 3-button animations (passenger doors, luggage compartment, and driver cabin), working dashboard dials, realistic Scania DC13 engine sound loops, and balanced multi-axle highway suspension for zero wobbling.",
+    "thumbnailUrl": "/images/mods/scania-k410-multiaxle.jpg",
+    "screenshots": [
+      "/images/mods/scania-k410-multiaxle.jpg"
+    ],
+    "version": "Jetbus 5 Edition",
+    "supportedGameVersion": "BUSSID v4.0.4 - v4.3.4+",
+    "fileSize": "66.31 MB",
+    "uploadDate": "2026-11-25",
+    "downloadUrl": "https://sub4unlock.com/S/97cm3",
+    "author": "VayZenXPlayz",
+    "downloadsCount": 1140,
+    "likesCount": 245,
+    "rating": 5,
+    "isFeatured": true,
+    "isTrending": true,
+    "badge": "NEW",
+    "features": [
+      "Heavy-duty Scania K410 multi-axle chassis with high stability",
+      "Full 3-stage interactive animations (Doors, Luggage & Driver Window)",
+      "Ultra-realistic Jetbus 5 detailed interior & passenger cabin",
+      "Authentic Scania DC13 turbo diesel engine sound loops",
+      "Realistic air brakes hiss and reverse buzzer audio",
+      "Smooth multi-axle highway steering & high-speed handling"
+    ],
+    "requirements": [
+      "Bus Simulator Indonesia version 4.0.4 or higher installed",
+      "Minimum 3GB RAM on Android device",
+      "70MB free storage space for mod & livery files"
+    ],
+    "installationGuide": [
+      {
+        "step": 1,
+        "title": "Download Mod File",
+        "instruction": "Click the Download button below to complete Cloudflare verification and unlock your SCANIA K410 Multi-axle mod file."
+      },
+      {
+        "step": 2,
+        "title": "Move to BUSSID/Mods Directory",
+        "instruction": "Open ZArchiver or your file manager, locate the downloaded file, and move it to: Internal Storage > BUSSID > Mods."
+      },
+      {
+        "step": 3,
+        "title": "Activate in BUSSID Garage",
+        "instruction": "Launch Bus Simulator Indonesia, open Garage (Garasi), navigate to the SCANIA K410 coach and tap 'Use' (Pakai)!"
+      }
+    ],
+    "tags": [
+      "bussid",
+      "buses",
+      "scania",
+      "k410",
+      "multi-axle",
+      "jetbus 5",
+      "luxury bus",
+      "tourist coach"
+    ]
+  },
+  {
     "id": "ashok-leyland-bs6",
     "slug": "ashok-leyland-bs6",
     "name": "Ashok Leyland BS6 Bus Mod",
