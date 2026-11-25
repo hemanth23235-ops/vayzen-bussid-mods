@@ -90,10 +90,10 @@ export default function ModsClient({ initialMods }: ModsClientProps) {
             <span className="text-xs text-gray-400">• High Speed Direct .bussidmod Mirrors</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Bus Simulator Indonesia Mods
+            VayZenXPlays Mods
           </h1>
           <p className="text-sm text-gray-400 mt-1 max-w-2xl">
-            Download verified Kerala buses, KSRTC, heavy Indian trucks, Mahindra Thar 4x4, offroad hill ghat maps, and 4K liveries for BUSSID.
+            Download verified Kerala buses, KSRTC, 4K liveries, Mahindra Thar 4x4, heavy trucks, and offroad hill maps for Bus Simulator Indonesia.
           </p>
         </div>
 

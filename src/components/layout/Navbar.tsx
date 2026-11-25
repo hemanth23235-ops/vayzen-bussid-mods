@@ -85,10 +85,10 @@ export default function Navbar() {
               <div className="flex flex-col">
                 <div className="flex items-center gap-1.5">
                   <span className="font-extrabold text-xl tracking-tight text-white group-hover:text-brand-orange transition">
-                    VAYZEN<span className="text-brand-orange">X</span>PLAYZ
+                    VAYZEN<span className="text-brand-orange">X</span>PLAYS
                   </span>
                   <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-brand-orange/20 text-brand-orange border border-brand-orange/40 uppercase tracking-wider">
-                    BUSSID
+                    MODS
                   </span>
                 </div>
                 <span className="text-[10px] text-gray-400 font-medium tracking-wide">

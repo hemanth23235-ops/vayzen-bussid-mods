@@ -4,9 +4,9 @@ import ModsClient from './ModsClient';
 import { getAllMods } from '@/lib/mods';
 
 export const metadata: Metadata = {
-  title: 'All Gaming Mods & Addons',
+  title: 'VayZenXPlays Mods - Bus Simulator Indonesia Mods Library',
   description:
-    'Browse and download premium BUSSID buses, trucks, cars, maps, Minecraft shaders, and GTA mods. Free direct downloads with installation guides.',
+    'Download premium BUSSID buses, 4K liveries, 4x4 cars, heavy trucks, and offroad ghat maps by VayZenXPlays. 100% safe direct download links with installation guides.',
 };
 
 export const revalidate = 60;

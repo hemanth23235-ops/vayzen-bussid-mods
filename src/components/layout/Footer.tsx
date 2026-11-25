@@ -67,9 +67,9 @@ export default function Footer() {
                 />
               </div>
               <span className="font-extrabold text-xl tracking-tight text-white">
-                VAYZEN<span className="text-brand-orange">X</span>PLAYZ{' '}
+                VAYZEN<span className="text-brand-orange">X</span>PLAYS{' '}
                 <span className="text-xs font-semibold px-1.5 py-0.5 rounded bg-brand-orange/20 text-brand-orange border border-brand-orange/30">
-                  BUSSID
+                  MODS
                 </span>
               </span>
             </Link>
