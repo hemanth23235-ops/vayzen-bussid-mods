@@ -62,7 +62,7 @@ export default function CategorySection() {
             return (
               <Link
                 key={cat.id}
-                href={`/mods?category=${encodeURIComponent(cat.name)}`}
+                href={`/mods?category=${cat.id}`}
                 className="group relative rounded-2xl overflow-hidden bg-dark-900 border border-dark-750 hover:border-brand-orange/50 p-5 flex flex-col justify-between h-48 transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
               >
                 {/* Background image preview with blur and gradient overlay */}

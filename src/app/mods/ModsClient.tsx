@@ -38,11 +38,19 @@ export default function ModsClient({ initialMods }: ModsClientProps) {
 
     // Filter by category
     if (selectedCategory && selectedCategory.toLowerCase() !== 'all') {
-      list = list.filter(
-        (m) =>
+      const targetSlug = slugify(selectedCategory);
+      list = list.filter((m) => {
+        const modCatSlug = slugify(m.category);
+        return (
           m.category.toLowerCase() === selectedCategory.toLowerCase() ||
-          slugify(m.category) === slugify(selectedCategory)
-      );
+          modCatSlug === targetSlug ||
+          (targetSlug.includes('liver') && modCatSlug.includes('liver')) ||
+          (targetSlug.includes('bus') && modCatSlug.includes('bus') && !targetSlug.includes('liver') && !modCatSlug.includes('liver')) ||
+          (targetSlug.includes('car') && modCatSlug.includes('car')) ||
+          (targetSlug.includes('truck') && modCatSlug.includes('truck')) ||
+          (targetSlug.includes('map') && modCatSlug.includes('map'))
+        );
+      });
     }
 
     // Search query

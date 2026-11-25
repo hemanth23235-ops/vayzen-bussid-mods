@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Search, X, ArrowUpDown, Bus, Truck, Car, MapPin, Layers, Sun, Gamepad2 } from 'lucide-react';
+import { slugify } from '@/lib/utils';
 import { categories } from '@/data/categories';
 
 interface ModFiltersProps {
@@ -91,7 +92,11 @@ export default function ModFilters({
         </button>
 
         {categories.map((cat) => {
-          const isSelected = selectedCategory.toLowerCase() === cat.name.toLowerCase();
+          const isSelected =
+            selectedCategory.toLowerCase() === cat.name.toLowerCase() ||
+            selectedCategory.toLowerCase() === cat.id.toLowerCase() ||
+            slugify(selectedCategory) === slugify(cat.name) ||
+            slugify(selectedCategory) === cat.id;
           return (
             <button
               key={cat.id}

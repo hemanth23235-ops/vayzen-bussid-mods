@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { categories } from '@/data/categories';
 import { getAllMods } from '@/lib/mods';
+import { slugify } from '@/lib/utils';
 import {
   Bus,
   Truck,
@@ -38,9 +39,15 @@ export default async function CategoriesPage() {
 
   // Calculate mod count for each category
   const categoryWithCounts = categories.map((cat) => {
-    const count = allMods.filter(
-      (m) => m.category.toLowerCase() === cat.name.toLowerCase()
-    ).length;
+    const count = allMods.filter((m) => {
+      const modSlug = slugify(m.category);
+      return (
+        m.category.toLowerCase() === cat.name.toLowerCase() ||
+        modSlug === cat.id ||
+        (cat.id.includes('liver') && modSlug.includes('liver')) ||
+        (cat.id.includes('bus') && modSlug.includes('bus') && !cat.id.includes('liver') && !modSlug.includes('liver'))
+      );
+    }).length;
     return {
       ...cat,
       modCount: count,
@@ -73,7 +80,7 @@ export default async function CategoriesPage() {
             return (
               <Link
                 key={cat.id}
-                href={`/mods?category=${encodeURIComponent(cat.name)}`}
+                href={`/mods?category=${cat.id}`}
                 className="group relative rounded-2xl overflow-hidden bg-dark-900 border border-dark-750 hover:border-brand-orange/50 p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
               >
                 {/* Background image preview */}
