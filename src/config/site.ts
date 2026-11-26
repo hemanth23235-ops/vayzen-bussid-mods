@@ -5,7 +5,7 @@ export const siteConfig: SiteConfig = {
   title: 'VayZenXPlays Mods - Bus Simulator Indonesia Mods, Liveries & Maps',
   description:
     'Download high-speed Kerala tourist buses, KSRTC, sleeper coaches, Mahindra Thar 4x4, Indian heavy trucks, offroad hill maps, and 4K liveries for Bus Simulator Indonesia. 100% safe direct links.',
-  url: 'https://vayzenxplayz-bussid-mods.netlify.app',
+  url: 'https://vayzen-bussid-mods.vercel.app',
   channelName: 'VayZenXPlays',
   // Easily update your YouTube channel link here:
   channelUrl: 'https://www.youtube.com/@VayZenXPlayz',
