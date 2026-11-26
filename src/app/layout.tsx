@@ -3,6 +3,7 @@ import './globals.css';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import ScrollToTop from '@/components/common/ScrollToTop';
+import { Analytics } from '@vercel/analytics/react';
 import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
@@ -73,6 +74,7 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
         <ScrollToTop />
+        <Analytics />
       </body>
     </html>
   );
