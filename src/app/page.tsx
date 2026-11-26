@@ -2,20 +2,15 @@ import React from 'react';
 import HeroSection from '@/components/home/HeroSection';
 import FeaturedModsSection from '@/components/home/FeaturedModsSection';
 import CategorySection from '@/components/home/CategorySection';
-import LatestAndPopularSection from '@/components/home/LatestAndPopularSection';
 import YouTubeSection from '@/components/home/YouTubeSection';
 import ModRequestSection from '@/components/home/ModRequestSection';
-import { getFeaturedMods, getLatestMods, getMostDownloadedMods } from '@/lib/mods';
+import { getFeaturedMods } from '@/lib/mods';
 import { siteConfig } from '@/config/site';
 
 export const revalidate = 60; // ISR cache update every minute
 
 export default async function HomePage() {
-  const [featuredMods, latestMods, mostDownloadedMods] = await Promise.all([
-    getFeaturedMods(),
-    getLatestMods(6),
-    getMostDownloadedMods(6),
-  ]);
+  const featuredMods = await getFeaturedMods();
 
   const websiteSchema = {
     '@context': 'https://schema.org',
@@ -45,12 +40,6 @@ export default async function HomePage() {
 
       {/* Game Categories */}
       <CategorySection />
-
-      {/* Latest & Most Downloaded Mods with Interactive Tabs */}
-      <LatestAndPopularSection
-        latestMods={latestMods}
-        mostDownloadedMods={mostDownloadedMods}
-      />
 
       {/* Subscriber Community Mod Request Form */}
       <ModRequestSection />
