@@ -1,5 +1,70 @@
 [
   {
+    "id": "scania-metrolink-multiaxle",
+    "slug": "scania-metrolink-multiaxle",
+    "name": "SCANIA Multi-axle Metrolink Bus Mod",
+    "game": "BUSSID",
+    "category": "BUSSID Buses",
+    "shortDescription": "Official Scania Metrolink multi-axle luxury coach with authentic KSRTC Kerala Govt livery, realistic graphics, smooth handling, and detailed passenger cabin.",
+    "description": "Experience the pride of Kerala with the official KSRTC Scania Metrolink Multi-Axle Bus Mod for Bus Simulator Indonesia. Features high-definition Kerala State Road Transport Corporation livery, authentic 'Kerala Maharaja' destination display, detailed cockpit with driver controls, smooth multi-axle steering, realistic Scania engine sound effects, and custom animated doors & luggage compartments.",
+    "thumbnailUrl": "/images/mods/scania-metrolink-multiaxle.jpg",
+    "screenshots": [
+      "/images/mods/scania-metrolink-multiaxle.jpg"
+    ],
+    "version": "Metrolink HD v1.0",
+    "supportedGameVersion": "BUSSID v4.0.4 - v4.3.4+",
+    "fileSize": "102.35 MB",
+    "uploadDate": "2026-11-27",
+    "downloadUrl": "https://sub4unlock.com/S/D7eje",
+    "author": "VayZenXPlayz",
+    "downloadsCount": 1680,
+    "likesCount": 385,
+    "rating": 5,
+    "isFeatured": true,
+    "isTrending": true,
+    "badge": "HOT",
+    "features": [
+      "Official KSRTC (Kerala State Road Transport Corporation) government livery",
+      "Scania Metrolink multi-axle chassis with high highway stability",
+      "Realistic graphics and authentic Kerala Maharaja front LED board",
+      "Full 3-stage interactive animations (passenger doors, wipers, luggage bay)",
+      "Ultra-detailed interior with passenger seats and driver cockpit",
+      "Authentic Scania turbo-diesel sound loops and air brake hiss"
+    ],
+    "requirements": [
+      "Bus Simulator Indonesia (BUSSID) version 4.0.4 or higher installed",
+      "110MB free device storage space for the .bussidmod file",
+      "Android 7.0+ or compatible device"
+    ],
+    "installationGuide": [
+      {
+        "step": 1,
+        "title": "Download Mod File",
+        "instruction": "Click the Download button below to complete quick verification and unlock your direct download."
+      },
+      {
+        "step": 2,
+        "title": "Move to BUSSID Mods Folder",
+        "instruction": "Open ZArchiver or your File Manager, and move the downloaded .bussidmod file into Internal Storage > BUSSID > Mods directory."
+      },
+      {
+        "step": 3,
+        "title": "Equip in BUSSID Garage",
+        "instruction": "Launch Bus Simulator Indonesia, open Garage (Garasi), navigate to your Scania Metrolink, and tap Use!"
+      }
+    ],
+    "tags": [
+      "bussid",
+      "buses",
+      "scania",
+      "metrolink",
+      "multi-axle",
+      "ksrtc",
+      "kerala",
+      "govt vehicle"
+    ]
+  },
+  {
     "id": "ashok-leyland-livery-pack",
     "slug": "ashok-leyland-livery-pack",
     "name": "Ashok Leyland Bus Livery Pack (12 Unique Styles)",
