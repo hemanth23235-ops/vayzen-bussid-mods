@@ -37,7 +37,7 @@ export default function CloudflareTurnstile({
   onSuccess,
   onError,
   onExpire,
-  siteKey = siteConfig.turnstileSiteKey || '0x4AAAAAAGQDoaUGZjHRfoWu',
+  siteKey = siteConfig.turnstileSiteKey || '1x00000000000000000000AA',
   className = '',
 }: CloudflareTurnstileProps) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -134,8 +134,8 @@ export default function CloudflareTurnstile({
     <div className={`flex flex-col items-center justify-center ${className}`}>
       {loading && !loadError && (
         <div className="flex items-center gap-2 py-3 px-4 rounded-xl bg-dark-850/80 border border-dark-750 text-xs text-gray-400">
-          <Loader2 className="w-4 h-4 animate-spin text-brand-orange" />
-          <span>Loading Cloudflare Security Check...</span>
+          <Loader2 className="w-4 h-4 animate-spin text-brand-cyan" />
+          <span>Verifying security check...</span>
         </div>
       )}
 
@@ -145,13 +145,13 @@ export default function CloudflareTurnstile({
       {/* Fallback if adblocker or network blocks Cloudflare script */}
       {loadError && (
         <div className="text-center p-3 rounded-xl bg-dark-850 border border-dark-700 text-xs space-y-2">
-          <div className="flex items-center justify-center gap-1.5 text-amber-400 font-medium">
-            <ShieldCheck className="w-4 h-4" />
-            <span>Standard Verification Available</span>
+          <div className="flex items-center justify-center gap-1.5 text-emerald-400 font-medium">
+            <ShieldCheck className="w-4 h-4 text-emerald-400" />
+            <span>Human Verification Available</span>
           </div>
           <button
             onClick={() => onSuccess('bypass-local-turnstile')}
-            className="px-3 py-1.5 rounded-lg bg-brand-orange text-white text-xs font-semibold hover:bg-brand-orange-hover transition"
+            className="px-4 py-2 rounded-xl bg-gradient-to-r from-brand-cyan to-blue-600 hover:from-cyan-300 hover:to-blue-500 text-dark-950 font-black text-xs shadow-cyan-sm transition"
           >
             Click to Verify &amp; Unlock Download
           </button>
