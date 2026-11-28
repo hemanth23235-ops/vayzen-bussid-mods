@@ -15,6 +15,15 @@ export default function YouTubeSection() {
   // Official VayZenXPlayz YouTube channel videos
   const showcaseVideos = [
     {
+      id: 'ZaSphn0ayoI',
+      title: 'How to Download & Install BUSSID Mods in 2026 (Step-by-Step)',
+      thumbnailUrl: 'https://i.ytimg.com/vi/ZaSphn0ayoI/hqdefault.jpg',
+      views: 'VayZenXPlayz Official',
+      duration: 'Tutorial',
+      date: 'New Guide',
+      url: 'https://youtube.com/shorts/ZaSphn0ayoI',
+    },
+    {
       id: 'MRX6tcNMF4M',
       title: 'Ultra Realistic Volvo 9600s Sleeper+Seater Bus Mod for BUSSID',
       thumbnailUrl: '/images/videos/volvo-9600s.jpg',

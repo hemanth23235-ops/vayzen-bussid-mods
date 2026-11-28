@@ -17,6 +17,7 @@ import {
   Terminal,
   Sparkles,
   Bus,
+  Play,
 } from 'lucide-react';
 import { siteConfig } from '@/config/site';
 import YouTubeIcon from '@/components/common/YouTubeIcon';
@@ -135,6 +136,47 @@ export default function ReadmePage() {
             realistic diesel engine audio, and custom ghat maps safely.
           </p>
         </div>
+
+        {/* Featured Video Tutorial Embed */}
+        <section className="bg-gradient-to-r from-dark-900 via-dark-850 to-dark-900 border border-dark-750/90 rounded-3xl p-6 sm:p-8 shadow-2xl relative overflow-hidden">
+          <div className="flex flex-col lg:flex-row items-center gap-8 justify-between">
+            <div className="space-y-4 max-w-lg text-left">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-600/15 border border-red-500/30 text-red-400 text-xs font-bold uppercase tracking-wider">
+                <Play className="w-3.5 h-3.5 fill-red-400" />
+                <span>OFFICIAL VIDEO TUTORIAL</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-black text-white">
+                Prefer a Video Guide? Watch How to Install Mods Step-by-Step
+              </h2>
+              <p className="text-xs text-gray-400 leading-relaxed">
+                Watch our quick step-by-step walkthrough showing how to download from the website,
+                unlock links safely, and move files to the BUSSID folder on your phone.
+              </p>
+              <div className="pt-2 flex flex-wrap gap-3">
+                <a
+                  href="https://youtube.com/shorts/ZaSphn0ayoI"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-bold text-xs flex items-center gap-2 shadow-lg transition"
+                >
+                  <YouTubeIcon className="w-4 h-4" />
+                  <span>Open on YouTube Shorts</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Embedded Player */}
+            <div className="w-full sm:w-[320px] aspect-[9/16] max-h-[560px] rounded-2xl overflow-hidden border border-dark-700 shadow-2xl bg-black shrink-0 relative">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/ZaSphn0ayoI"
+                title="How to download and install BUSSID mods"
+                className="w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </section>
 
         {/* Section 1: Mod Installation Steps */}
         <section className="bg-dark-900/90 border border-dark-750/90 rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden space-y-8">
