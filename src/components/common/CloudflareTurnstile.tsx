@@ -37,7 +37,7 @@ export default function CloudflareTurnstile({
   onSuccess,
   onError,
   onExpire,
-  siteKey = siteConfig.turnstileSiteKey || '1x00000000000000000000AA',
+  siteKey = siteConfig.turnstileSiteKey || '0x4AAAAAAGXKxG5yZk13BEEd',
   className = '',
 }: CloudflareTurnstileProps) {
   const containerRef = useRef<HTMLDivElement>(null);
