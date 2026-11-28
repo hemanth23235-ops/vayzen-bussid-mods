@@ -99,7 +99,7 @@ export default function ModDetailClient({ mod, relatedMods }: ModDetailClientPro
             Mods
           </a>
           <ChevronRight className="w-3.5 h-3.5 text-gray-600" />
-          <span className="text-brand-orange">{mod.game}</span>
+          <span className="text-brand-cyan font-bold">{mod.game}</span>
           <ChevronRight className="w-3.5 h-3.5 text-gray-600" />
           <span className="text-gray-300 truncate max-w-xs">{mod.name}</span>
         </div>
@@ -124,7 +124,7 @@ export default function ModDetailClient({ mod, relatedMods }: ModDetailClientPro
 
                 {/* Badges on image */}
                 <div className="absolute top-4 left-4 flex items-center gap-2">
-                  <span className="text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-lg bg-brand-orange text-white shadow-orange-sm">
+                  <span className="text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full bg-brand-cyan/20 text-brand-cyan border border-brand-cyan/40 shadow-sm backdrop-blur-md">
                     {mod.game}
                   </span>
                   <span className="text-xs font-semibold px-2.5 py-1 rounded-lg bg-dark-950/80 text-gray-300 border border-white/10 backdrop-blur-md">
@@ -152,7 +152,7 @@ export default function ModDetailClient({ mod, relatedMods }: ModDetailClientPro
                       onClick={() => setActiveImageIndex(idx)}
                       className={`relative w-24 h-16 rounded-xl overflow-hidden shrink-0 border-2 transition ${
                         activeImageIndex === idx
-                          ? 'border-brand-orange shadow-orange-sm scale-105'
+                          ? 'border-brand-cyan shadow-cyan-sm scale-105'
                           : 'border-dark-700 opacity-60 hover:opacity-100'
                       }`}
                     >
@@ -177,7 +177,7 @@ export default function ModDetailClient({ mod, relatedMods }: ModDetailClientPro
                     {mod.name}
                   </h1>
                   <p className="text-xs text-gray-400 mt-1">
-                    Uploaded by <strong className="text-brand-orange">{mod.author}</strong> on{' '}
+                    Uploaded by <strong className="text-brand-cyan">{mod.author}</strong> on{' '}
                     {formatDate(mod.uploadDate)}
                   </p>
                 </div>
@@ -195,7 +195,7 @@ export default function ModDetailClient({ mod, relatedMods }: ModDetailClientPro
                       </>
                     ) : (
                       <>
-                        <Copy className="w-3.5 h-3.5 text-brand-orange" />
+                        <Copy className="w-3.5 h-3.5 text-brand-cyan" />
                         <span>Copy Link</span>
                       </>
                     )}
@@ -216,7 +216,7 @@ export default function ModDetailClient({ mod, relatedMods }: ModDetailClientPro
               {/* Description */}
               <div className="pt-4 border-t border-dark-800 space-y-3">
                 <h3 className="text-base font-bold text-white flex items-center gap-2">
-                  <Info className="w-4 h-4 text-brand-orange" />
+                  <Info className="w-4 h-4 text-brand-cyan" />
                   <span>Mod Overview</span>
                 </h3>
                 <p className="text-sm text-gray-300 leading-relaxed whitespace-pre-line">
@@ -228,7 +228,7 @@ export default function ModDetailClient({ mod, relatedMods }: ModDetailClientPro
               {mod.features && mod.features.length > 0 && (
                 <div className="pt-6 border-t border-dark-800 space-y-3">
                   <h3 className="text-base font-bold text-white flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-brand-orange" />
+                    <Sparkles className="w-4 h-4 text-brand-cyan" />
                     <span>Key Mod Features</span>
                   </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -237,7 +237,7 @@ export default function ModDetailClient({ mod, relatedMods }: ModDetailClientPro
                         key={idx}
                         className="flex items-start gap-2.5 p-3 rounded-xl bg-dark-850/80 border border-dark-750 text-xs text-gray-200"
                       >
-                        <CheckCircle className="w-4 h-4 text-brand-orange shrink-0 mt-0.5" />
+                        <CheckCircle className="w-4 h-4 text-brand-cyan shrink-0 mt-0.5" />
                         <span>{feat}</span>
                       </div>
                     ))}
@@ -250,10 +250,10 @@ export default function ModDetailClient({ mod, relatedMods }: ModDetailClientPro
                 <div className="pt-6 border-t border-dark-800 space-y-4">
                   <div className="flex items-center justify-between">
                     <h3 className="text-base font-bold text-white flex items-center gap-2">
-                      <Wrench className="w-4 h-4 text-brand-orange" />
+                      <Wrench className="w-4 h-4 text-brand-cyan" />
                       <span>Step-by-Step Installation Tutorial</span>
                     </h3>
-                    <span className="text-xs text-brand-orange font-semibold">100% Working</span>
+                    <span className="text-xs text-brand-cyan font-bold">100% Working</span>
                   </div>
 
                   <div className="space-y-3">
@@ -262,7 +262,7 @@ export default function ModDetailClient({ mod, relatedMods }: ModDetailClientPro
                         key={step.step}
                         className="p-4 rounded-2xl bg-dark-850 border border-dark-750 flex items-start gap-3.5"
                       >
-                        <div className="w-7 h-7 rounded-xl bg-brand-orange text-white flex items-center justify-center font-bold text-xs shrink-0 shadow-sm shadow-brand-orange/40">
+                        <div className="w-7 h-7 rounded-xl bg-gradient-to-tr from-brand-cyan to-blue-600 text-dark-950 flex items-center justify-center font-black text-xs shrink-0 shadow-sm shadow-cyan-500/40">
                           {step.step}
                         </div>
                         <div className="space-y-1">
@@ -283,10 +283,10 @@ export default function ModDetailClient({ mod, relatedMods }: ModDetailClientPro
           <div className="space-y-6">
             {/* Primary Download Box */}
             <div className="bg-dark-900 border border-dark-750 rounded-3xl p-6 space-y-5 shadow-2xl relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-brand-orange/10 rounded-full blur-2xl pointer-events-none" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-brand-cyan/10 rounded-full blur-2xl pointer-events-none" />
 
               <div className="flex items-center justify-between border-b border-dark-800 pb-4">
-                <span className="text-xs font-bold text-brand-orange uppercase tracking-wider">
+                <span className="text-xs font-bold text-brand-cyan uppercase tracking-wider">
                   Download Package
                 </span>
                 <span className="text-xs text-gray-400 font-mono font-semibold">
@@ -306,9 +306,9 @@ export default function ModDetailClient({ mod, relatedMods }: ModDetailClientPro
               {/* Download CTA Button */}
               <button
                 onClick={() => setDownloadModalOpen(true)}
-                className="w-full py-4 px-4 rounded-xl bg-gradient-to-r from-brand-orange to-red-600 hover:from-brand-orange-hover hover:to-red-500 text-white font-extrabold text-base flex items-center justify-center gap-2 shadow-orange-glow transition transform hover:-translate-y-0.5"
+                className="w-full py-4 px-4 rounded-xl bg-gradient-to-r from-brand-cyan via-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 text-dark-950 font-black text-base flex items-center justify-center gap-2 shadow-cyan-glow transition transform hover:-translate-y-0.5 active:translate-y-0"
               >
-                <Download className="w-5 h-5 animate-bounce" />
+                <Download className="w-5 h-5 animate-bounce text-dark-950" />
                 <span>Download Mod Now</span>
               </button>
 
@@ -337,7 +337,7 @@ export default function ModDetailClient({ mod, relatedMods }: ModDetailClientPro
                 </div>
                 <div className="flex items-center justify-between py-2 border-b border-dark-800/80">
                   <span className="text-gray-400">Total Downloads</span>
-                  <span className="font-mono font-bold text-brand-orange">
+                  <span className="font-mono font-bold text-brand-cyan">
                     {formatNumber(downloadCount)}
                   </span>
                 </div>
@@ -356,13 +356,13 @@ export default function ModDetailClient({ mod, relatedMods }: ModDetailClientPro
             {mod.requirements && mod.requirements.length > 0 && (
               <div className="bg-dark-900 border border-dark-750 rounded-3xl p-6 space-y-3">
                 <h4 className="text-sm font-bold text-white flex items-center gap-2">
-                  <CheckSquare className="w-4 h-4 text-brand-orange" />
+                  <CheckSquare className="w-4 h-4 text-brand-cyan" />
                   <span>Mod Requirements</span>
                 </h4>
                 <ul className="space-y-2 text-xs text-gray-300">
                   {mod.requirements.map((req, idx) => (
                     <li key={idx} className="flex items-start gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-brand-orange shrink-0 mt-1.5" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-brand-cyan shrink-0 mt-1.5" />
                       <span>{req}</span>
                     </li>
                   ))}
@@ -386,7 +386,7 @@ export default function ModDetailClient({ mod, relatedMods }: ModDetailClientPro
             {/* Creator Channel Card */}
             <div className="bg-gradient-to-br from-red-950/30 to-dark-900 border border-red-900/40 rounded-3xl p-5 space-y-3">
               <div className="flex items-center gap-3">
-                <div className="relative w-12 h-12 rounded-xl overflow-hidden p-0.5 bg-gradient-to-tr from-brand-orange to-red-600 shrink-0">
+                <div className="relative w-12 h-12 rounded-xl overflow-hidden p-0.5 bg-gradient-to-tr from-brand-cyan via-brand-orange to-brand-crimson shrink-0">
                   <Image
                     src="/images/channel-avatar.jpg"
                     alt={siteConfig.channelName}
@@ -428,7 +428,7 @@ export default function ModDetailClient({ mod, relatedMods }: ModDetailClientPro
               </div>
               <a
                 href="/mods"
-                className="text-xs font-bold text-brand-orange hover:underline flex items-center gap-1"
+                className="text-xs font-bold text-brand-cyan hover:underline flex items-center gap-1"
               >
                 <span>Browse All</span>
                 <ChevronRight className="w-3.5 h-3.5" />

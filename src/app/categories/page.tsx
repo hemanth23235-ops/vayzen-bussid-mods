@@ -60,8 +60,8 @@ export default async function CategoriesPage() {
         {/* Header */}
         <div className="mb-10">
           <div className="flex items-center gap-2 mb-2">
-            <span className="text-xs font-bold text-brand-orange uppercase tracking-wider px-2 py-0.5 rounded bg-brand-orange/15 border border-brand-orange/30">
-              BUSSID Catalog
+            <span className="text-[10px] font-black text-brand-cyan uppercase tracking-widest px-2.5 py-1 rounded-full bg-brand-cyan/15 border border-brand-cyan/35 shadow-sm">
+              SIMULATION ARCHIVE
             </span>
             <span className="text-xs text-gray-400">• Dedicated Bus Simulator Indonesia Hub</span>
           </div>
@@ -81,7 +81,7 @@ export default async function CategoriesPage() {
               <Link
                 key={cat.id}
                 href={`/mods?category=${cat.id}`}
-                className="group relative rounded-2xl overflow-hidden bg-dark-900 border border-dark-750 hover:border-brand-orange/50 p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
+                className="group relative rounded-2xl overflow-hidden bg-dark-900/90 border border-dark-750/80 hover:border-brand-cyan/50 p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 hover:shadow-cyan-glow/20"
               >
                 {/* Background image preview */}
                 <div className="absolute inset-0 z-0">
@@ -90,28 +90,28 @@ export default async function CategoriesPage() {
                     alt={cat.name}
                     fill
                     sizes="(max-width: 768px) 100vw, 400px"
-                    className="object-cover opacity-15 group-hover:opacity-25 group-hover:scale-105 transition-all duration-500"
+                    className="object-cover opacity-20 group-hover:opacity-30 group-hover:scale-105 transition-all duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/80 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-900/85 to-transparent" />
                 </div>
 
                 <div className="relative z-10 space-y-4">
                   <div className="flex items-center justify-between">
-                    <div className="w-12 h-12 rounded-xl bg-dark-800 border border-dark-700 flex items-center justify-center text-brand-orange group-hover:bg-brand-orange group-hover:text-white transition duration-300 shadow-md">
+                    <div className="w-12 h-12 rounded-xl bg-dark-800/90 border border-dark-700/80 flex items-center justify-center text-brand-cyan group-hover:bg-gradient-to-r group-hover:from-brand-cyan group-hover:to-blue-600 group-hover:text-dark-950 transition duration-300 shadow-md">
                       <Icon className="w-6 h-6" />
                     </div>
-                    <span className="text-xs font-mono font-bold px-2.5 py-1 rounded-full bg-dark-800 text-gray-300 border border-dark-700">
+                    <span className="text-xs font-mono font-bold px-2.5 py-1 rounded-full bg-dark-800/80 text-gray-300 border border-dark-700/80">
                       {cat.modCount} {cat.modCount === 1 ? 'Mod' : 'Mods'}
                     </span>
                   </div>
 
                   <div>
                     <div className="flex items-center gap-2 mb-1">
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-brand-orange">
+                      <span className="text-[10px] font-black uppercase tracking-widest text-brand-cyan">
                         BUSSID
                       </span>
                     </div>
-                    <h3 className="text-xl font-bold text-white group-hover:text-brand-orange transition">
+                    <h3 className="text-xl font-bold text-white group-hover:text-brand-cyan transition">
                       {cat.name}
                     </h3>
                     <p className="text-xs text-gray-400 mt-2 line-clamp-2 leading-relaxed">
@@ -120,7 +120,7 @@ export default async function CategoriesPage() {
                   </div>
                 </div>
 
-                <div className="relative z-10 flex items-center justify-between pt-4 mt-6 border-t border-dark-800 text-xs font-semibold text-gray-300 group-hover:text-brand-orange transition">
+                <div className="relative z-10 flex items-center justify-between pt-4 mt-6 border-t border-dark-800/80 text-xs font-semibold text-gray-300 group-hover:text-brand-cyan transition">
                   <span>Browse BUSSID Mods</span>
                   <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition" />
                 </div>

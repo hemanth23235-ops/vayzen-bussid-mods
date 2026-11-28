@@ -18,7 +18,7 @@ export default async function ModsPage() {
     <Suspense
       fallback={
         <div className="pt-32 pb-20 text-center min-h-screen bg-dark-950 text-gray-400">
-          <div className="w-8 h-8 border-2 border-brand-orange border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+          <div className="w-8 h-8 border-2 border-brand-cyan border-t-transparent rounded-full animate-spin mx-auto mb-4" />
           <p>Loading gaming mods library...</p>
         </div>
       }

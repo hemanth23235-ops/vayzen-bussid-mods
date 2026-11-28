@@ -3,10 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --background: #08090d;
-  --foreground: #f3f4f6;
-  --card-bg: #10131a;
-  --border-color: #1e2433;
+  --background: #06080d;
+  --foreground: #f3f5f9;
+  --card-bg: #101520;
+  --border-color: #1e2638;
+  --accent-cyan: #00e5ff;
+  --accent-crimson: #ff2a51;
   --accent-orange: #ff5e00;
 }
 
@@ -20,65 +22,80 @@ html {
 }
 
 body {
-  background-color: #07080b;
-  color: #f3f4f6;
+  background-color: #06080d;
+  color: #f3f5f9;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   overflow-x: hidden;
   min-height: 100vh;
 }
 
-/* Custom dark scrollbar */
+/* Custom dark studio scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #090a0f;
+  background: #080b12;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1f2533;
+  background: #1c2436;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ff5e00;
+  background: #00e5ff;
 }
 
 /* Glowing text effects */
-.text-glow {
+.text-glow-cyan {
+  text-shadow: 0 0 20px rgba(0, 229, 255, 0.5), 0 0 40px rgba(0, 229, 255, 0.2);
+}
+
+.text-glow-crimson {
+  text-shadow: 0 0 20px rgba(255, 42, 81, 0.5), 0 0 40px rgba(255, 42, 81, 0.2);
+}
+
+.text-glow-orange {
   text-shadow: 0 0 20px rgba(255, 94, 0, 0.45);
 }
 
 .text-glow-sm {
-  text-shadow: 0 0 10px rgba(255, 94, 0, 0.3);
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.35);
 }
 
-/* Gaming grid background */
+/* Studio grid pattern */
 .bg-grid-pattern {
-  background-size: 40px 40px;
+  background-size: 44px 44px;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
 }
 
-/* Card hover glow */
+/* Modern Card Hover Elevation */
 .card-hover-effect {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .card-hover-effect:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.8), 0 0 20px -2px rgba(255, 94, 0, 0.2);
-  border-color: rgba(255, 94, 0, 0.5);
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.9), 0 0 24px -2px rgba(0, 229, 255, 0.22);
+  border-color: rgba(0, 229, 255, 0.45);
 }
 
-/* Glassmorphism */
+/* Glassmorphism Studio Panels */
 .glass-panel {
-  background: rgba(16, 19, 26, 0.75);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(14, 19, 30, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-pill {
+  background: rgba(18, 24, 38, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }

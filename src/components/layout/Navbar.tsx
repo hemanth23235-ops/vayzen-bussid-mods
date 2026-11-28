@@ -83,43 +83,46 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2.5 group">
-              <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-brand-orange to-red-600 p-0.5 shadow-orange-sm group-hover:shadow-orange-glow transition duration-300 transform group-hover:scale-105 shrink-0 overflow-hidden">
+            <Link href="/" className="flex items-center gap-3 group">
+              <div className="relative w-11 h-11 rounded-2xl bg-gradient-to-tr from-brand-cyan via-brand-orange to-brand-crimson p-[2px] shadow-cyan-sm group-hover:shadow-cyan-glow transition-all duration-300 transform group-hover:scale-105 shrink-0 overflow-hidden">
                 <Image
                   src="/images/channel-avatar.jpg"
                   alt="VayZenXPlayz"
-                  width={40}
-                  height={40}
-                  className="w-full h-full object-cover rounded-[10px]"
+                  width={44}
+                  height={44}
+                  className="w-full h-full object-cover rounded-[14px]"
                 />
               </div>
               <div className="flex flex-col">
-                <div className="flex items-center gap-1.5">
-                  <span className="font-extrabold text-xl tracking-tight text-white group-hover:text-brand-orange transition">
-                    VAYZEN<span className="text-brand-orange">X</span>PLAYS
+                <div className="flex items-center gap-2">
+                  <span className="font-extrabold text-xl tracking-tight text-white group-hover:text-brand-cyan transition">
+                    VAYZEN<span className="text-brand-cyan font-black">X</span>PLAYS
                   </span>
-                  <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-brand-orange/20 text-brand-orange border border-brand-orange/40 uppercase tracking-wider">
-                    MODS
+                  <span className="text-[9px] font-black px-2 py-0.5 rounded-full bg-brand-cyan/15 text-brand-cyan border border-brand-cyan/30 uppercase tracking-widest shadow-sm">
+                    STUDIO
                   </span>
                 </div>
-                <span className="text-[10px] text-gray-400 font-medium tracking-wide">
-                  Ultimate BUSSID Mods Hub
-                </span>
+                <div className="flex items-center gap-1.5 mt-0.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <span className="text-[10px] text-gray-400 font-medium tracking-wide">
+                    Premium BUSSID Simulation Hub
+                  </span>
+                </div>
               </div>
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center gap-1 bg-dark-900/80 px-4 py-1.5 rounded-full border border-dark-700/60 shadow-inner">
+            <nav className="hidden md:flex items-center gap-1.5 bg-dark-900/90 px-3 py-1.5 rounded-full border border-dark-700/80 shadow-2xl backdrop-blur-md">
               {navLinks.map((link) => {
                 const active = isActive(link.href);
                 return (
                   <Link
                     key={link.name}
                     href={link.href}
-                    className={`px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 relative ${
+                    className={`px-3.5 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 relative ${
                       active
-                        ? 'text-white bg-brand-orange shadow-orange-sm'
-                        : 'text-gray-300 hover:text-white hover:bg-dark-750'
+                        ? 'text-white bg-gradient-to-r from-brand-cyan/90 to-blue-600 shadow-cyan-sm font-bold'
+                        : 'text-gray-300 hover:text-white hover:bg-dark-800'
                     }`}
                   >
                     {link.name}
@@ -133,12 +136,12 @@ export default function Navbar() {
               {/* Quick Search Button */}
               <button
                 onClick={() => setSearchOpen(true)}
-                className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-dark-850 hover:bg-dark-750 text-gray-300 hover:text-white border border-dark-700 transition group text-sm"
+                className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-dark-900/80 hover:bg-dark-800 text-gray-300 hover:text-white border border-dark-700/80 hover:border-brand-cyan/40 transition group text-sm"
                 title="Search BUSSID mods (Ctrl + K)"
               >
-                <Search className="w-4 h-4 text-brand-orange group-hover:scale-110 transition" />
+                <Search className="w-3.5 h-3.5 text-brand-cyan group-hover:scale-110 transition" />
                 <span className="hidden sm:inline text-xs text-gray-400 font-medium">Search...</span>
-                <kbd className="hidden lg:inline-block text-[10px] px-1.5 py-0.5 rounded bg-dark-950 text-gray-400 border border-dark-700 font-mono">
+                <kbd className="hidden lg:inline-block text-[9px] px-1.5 py-0.5 rounded bg-dark-950 text-gray-400 border border-dark-700 font-mono">
                   ⌘K
                 </kbd>
               </button>
@@ -148,7 +151,7 @@ export default function Navbar() {
                 href={siteConfig.subscribeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden sm:flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-red-600 hover:bg-red-700 text-white text-xs font-bold shadow-md shadow-red-900/30 hover:shadow-red-700/50 transition transform hover:-translate-y-0.5"
+                className="hidden sm:flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white text-xs font-bold shadow-md shadow-red-950/50 hover:shadow-red-600/30 transition transform hover:-translate-y-0.5"
               >
                 <YouTubeIcon className="w-4 h-4 shrink-0" />
                 <span>Subscribe</span>

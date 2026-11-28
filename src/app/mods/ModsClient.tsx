@@ -92,8 +92,8 @@ export default function ModsClient({ initialMods }: ModsClientProps) {
         {/* Page Title & Intro */}
         <div className="mb-8">
           <div className="flex items-center gap-2 mb-2">
-            <span className="text-xs font-bold text-brand-orange uppercase tracking-wider px-2 py-0.5 rounded bg-brand-orange/15 border border-brand-orange/30">
-              BUSSID Library
+            <span className="text-[10px] font-black text-brand-cyan uppercase tracking-widest px-2.5 py-1 rounded-full bg-brand-cyan/15 border border-brand-cyan/35 shadow-sm">
+              BUSSID ARCHIVE
             </span>
             <span className="text-xs text-gray-400">• High Speed Direct .bussidmod Mirrors</span>
           </div>
@@ -126,9 +126,9 @@ export default function ModsClient({ initialMods }: ModsClientProps) {
             </p>
             <button
               onClick={resetFilters}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-orange hover:bg-brand-orange-hover text-white text-xs font-bold shadow-orange-sm transition"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-cyan to-blue-600 hover:from-cyan-300 hover:to-blue-500 text-dark-950 text-xs font-black shadow-cyan-sm transition"
             >
-              <FilterX className="w-4 h-4" />
+              <FilterX className="w-4 h-4 text-dark-950" />
               <span>Reset All Filters</span>
             </button>
           </div>

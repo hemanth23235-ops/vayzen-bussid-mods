@@ -88,7 +88,7 @@ export default function DownloadModal({ mod, isOpen, onClose }: DownloadModalPro
         <div className="flex items-start justify-between gap-4">
           <div>
             <div className="flex items-center gap-2 mb-1">
-              <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-brand-orange/20 text-brand-orange border border-brand-orange/40">
+              <span className="text-[10px] font-black uppercase tracking-widest px-2.5 py-0.5 rounded-full bg-brand-cyan/15 text-brand-cyan border border-brand-cyan/40">
                 BUSSID MOD
               </span>
               <span className="text-xs text-gray-400">{mod.category}</span>
@@ -124,7 +124,7 @@ export default function DownloadModal({ mod, isOpen, onClose }: DownloadModalPro
           </div>
           <div>
             <span className="text-[11px] text-gray-400 block">Downloads</span>
-            <span className="text-sm font-bold text-brand-orange font-mono">
+            <span className="text-sm font-bold text-brand-cyan font-mono">
               {formatNumber(mod.downloadsCount)}
             </span>
           </div>
@@ -133,7 +133,7 @@ export default function DownloadModal({ mod, isOpen, onClose }: DownloadModalPro
         {/* BUSSID Specific Instructions */}
         <div className="space-y-2">
           <div className="flex items-start gap-2 text-xs text-gray-300 bg-dark-800/80 p-3 rounded-xl border border-dark-700">
-            <AlertTriangle className="w-4 h-4 text-brand-orange shrink-0 mt-0.5" />
+            <AlertTriangle className="w-4 h-4 text-brand-cyan shrink-0 mt-0.5" />
             <div className="space-y-1">
               <span className="font-semibold text-white block">BUSSID Installation Guide:</span>
               <p className="text-[11px] leading-relaxed text-gray-400">
@@ -174,13 +174,13 @@ export default function DownloadModal({ mod, isOpen, onClose }: DownloadModalPro
             disabled={!isVerified || countdown !== null}
             className={`w-full py-3.5 px-4 rounded-xl font-bold text-base flex items-center justify-center gap-2 transition transform ${
               isVerified
-                ? 'bg-gradient-to-r from-brand-orange to-red-600 hover:from-brand-orange-hover hover:to-red-500 text-white shadow-orange-glow hover:-translate-y-0.5'
+                ? 'bg-gradient-to-r from-brand-cyan via-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 text-dark-950 font-black shadow-cyan-glow hover:-translate-y-0.5 active:translate-y-0'
                 : 'bg-dark-800 text-gray-400 border border-dark-700 cursor-not-allowed opacity-75'
             }`}
           >
             {isVerified ? (
               <>
-                <Download className="w-5 h-5 animate-bounce" />
+                <Download className="w-5 h-5 animate-bounce text-dark-950" />
                 <span>
                   {countdown !== null
                     ? `Preparing Direct Link in ${countdown}s...`
@@ -224,7 +224,7 @@ export default function DownloadModal({ mod, isOpen, onClose }: DownloadModalPro
               </>
             ) : (
               <>
-                <Copy className="w-4 h-4 text-brand-orange" />
+                <Copy className="w-4 h-4 text-brand-cyan" />
                 <span>Copy Share Link</span>
               </>
             )}
@@ -233,7 +233,7 @@ export default function DownloadModal({ mod, isOpen, onClose }: DownloadModalPro
           <Link
             href={`/mods/${mod.slug}`}
             onClick={onClose}
-            className="text-brand-orange hover:underline flex items-center gap-1 font-semibold"
+            className="text-brand-cyan hover:underline flex items-center gap-1 font-semibold"
           >
             <FileText className="w-3.5 h-3.5" />
             <span>View Full Tutorial</span>

@@ -37,13 +37,13 @@ export default function ModFilters({
       <div className="flex flex-col md:flex-row gap-3 items-stretch md:items-center justify-between">
         {/* Instant Search Bar */}
         <div className="relative flex-1 max-w-xl">
-          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-brand-orange" />
+          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-brand-cyan" />
           <input
             type="text"
             value={searchQuery}
             onChange={(e) => onSearchChange(e.target.value)}
-            placeholder="Search BUSSID mods (e.g. Zedone, Thar, Capella, Signa, Wayanad, Basuri)..."
-            className="w-full pl-10 pr-9 py-2.5 rounded-xl bg-dark-900 border border-dark-700 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition"
+            placeholder="Search BUSSID mods (e.g. Scania Metrolink, Zedone, Thar, Capella, Signa, Wayanad)..."
+            className="w-full pl-10 pr-9 py-2.5 rounded-xl bg-dark-900 border border-dark-700/80 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan transition shadow-inner"
           />
           {searchQuery && (
             <button
@@ -58,15 +58,15 @@ export default function ModFilters({
         {/* Sort dropdown & Result Counter */}
         <div className="flex items-center gap-3 justify-between md:justify-end">
           <span className="text-xs text-gray-400 font-medium">
-            <strong className="text-white">{totalCount}</strong> BUSSID mods found
+            <strong className="text-white font-mono">{totalCount}</strong> BUSSID mods found
           </span>
 
           <div className="flex items-center gap-2">
-            <ArrowUpDown className="w-4 h-4 text-gray-400" />
+            <ArrowUpDown className="w-4 h-4 text-brand-cyan" />
             <select
               value={selectedSort}
               onChange={(e) => onSortChange(e.target.value)}
-              className="bg-dark-900 border border-dark-700 text-xs text-gray-200 rounded-xl px-3 py-2.5 focus:outline-none focus:border-brand-orange cursor-pointer"
+              className="bg-dark-900 border border-dark-700/80 text-xs text-gray-200 rounded-xl px-3 py-2.5 focus:outline-none focus:border-brand-cyan cursor-pointer transition"
             >
               {sorts.map((s) => (
                 <option key={s.id} value={s.id}>
@@ -84,8 +84,8 @@ export default function ModFilters({
           onClick={() => onCategoryChange('all')}
           className={`px-4 py-2 rounded-xl font-bold whitespace-nowrap transition-all ${
             selectedCategory === 'all'
-              ? 'bg-brand-orange text-white shadow-orange-sm'
-              : 'bg-dark-850 hover:bg-dark-800 text-gray-400 hover:text-white border border-dark-750'
+              ? 'bg-gradient-to-r from-brand-cyan to-blue-600 text-dark-950 font-black shadow-cyan-sm'
+              : 'bg-dark-900/80 hover:bg-dark-800 text-gray-400 hover:text-white border border-dark-750/80'
           }`}
         >
           🚌 All BUSSID Mods
@@ -101,10 +101,10 @@ export default function ModFilters({
             <button
               key={cat.id}
               onClick={() => onCategoryChange(cat.name)}
-              className={`px-3.5 py-2 rounded-xl font-medium whitespace-nowrap transition-all ${
+              className={`px-3.5 py-2 rounded-xl whitespace-nowrap transition-all ${
                 isSelected
-                  ? 'bg-brand-orange text-white shadow-orange-sm font-bold'
-                  : 'bg-dark-850 hover:bg-dark-800 text-gray-400 hover:text-white border border-dark-750'
+                  ? 'bg-gradient-to-r from-brand-cyan to-blue-600 text-dark-950 font-black shadow-cyan-sm'
+                  : 'bg-dark-900/80 hover:bg-dark-800 text-gray-400 hover:text-white border border-dark-750/80'
               }`}
             >
               {cat.name}

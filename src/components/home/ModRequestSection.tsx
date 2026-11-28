@@ -190,20 +190,20 @@ export default function ModRequestSection() {
   };
 
   return (
-    <section id="mod-request-section" className="py-20 bg-dark-950 border-t border-dark-800 relative overflow-hidden">
+    <section id="mod-request-section" className="py-20 bg-dark-950 border-t border-dark-800/80 relative overflow-hidden">
       {/* Background ambient lighting */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-brand-orange/5 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-96 h-96 bg-red-600/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-brand-cyan/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-96 h-96 bg-brand-crimson/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-orange/10 border border-brand-orange/20 text-brand-orange text-xs font-bold uppercase tracking-wider mb-4">
-            <Sparkles className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-cyan/10 border border-brand-cyan/30 text-brand-cyan text-xs font-bold uppercase tracking-wider mb-4">
+            <Sparkles className="w-3.5 h-3.5 text-brand-cyan" />
             <span>Subscriber Community Hub</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            BUSSID Mod Request & <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-red-500">Live Status Tracker</span>
+          <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight uppercase">
+            BUSSID Mod Request & <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan via-sky-300 to-blue-500">Live Status Tracker</span>
           </h2>
           <p className="text-gray-400 text-sm mt-3 leading-relaxed">
             Request your favorite Kerala tourist bus, KSRTC coach, Indian truck, or hill map — and track its live development progress right here!
@@ -217,7 +217,7 @@ export default function ModRequestSection() {
             onClick={() => setActiveTab('submit')}
             className={`px-6 py-3 rounded-2xl font-bold text-xs sm:text-sm flex items-center gap-2 transition ${
               activeTab === 'submit'
-                ? 'bg-gradient-to-r from-brand-orange to-red-600 text-white shadow-orange-sm'
+                ? 'bg-gradient-to-r from-brand-cyan to-blue-600 text-dark-950 font-black shadow-cyan-sm'
                 : 'bg-dark-900 text-gray-400 hover:text-white border border-dark-750'
             }`}
           >
@@ -233,13 +233,13 @@ export default function ModRequestSection() {
             }}
             className={`px-6 py-3 rounded-2xl font-bold text-xs sm:text-sm flex items-center gap-2 transition ${
               activeTab === 'track'
-                ? 'bg-gradient-to-r from-brand-orange to-red-600 text-white shadow-orange-sm'
+                ? 'bg-gradient-to-r from-brand-cyan to-blue-600 text-dark-950 font-black shadow-cyan-sm'
                 : 'bg-dark-900 text-gray-400 hover:text-white border border-dark-750'
             }`}
           >
             <Clock className="w-4 h-4" />
             <span>Live Request Status</span>
-            <span className="px-2 py-0.5 rounded-full text-[10px] bg-black/40 text-brand-orange border border-brand-orange/30 font-mono">
+            <span className="px-2 py-0.5 rounded-full text-[10px] bg-dark-950 text-brand-cyan border border-brand-cyan/30 font-mono font-bold">
               {requests.length}
             </span>
           </button>
@@ -264,7 +264,7 @@ export default function ModRequestSection() {
                       setActiveTab('track');
                       fetchRequests();
                     }}
-                    className="px-6 py-3 rounded-xl bg-brand-orange hover:bg-brand-orange-hover text-white font-bold text-xs shadow-orange-sm transition"
+                    className="px-6 py-3 rounded-xl bg-gradient-to-r from-brand-cyan to-blue-600 hover:from-cyan-300 hover:to-blue-500 text-dark-950 font-black text-xs shadow-cyan-sm transition"
                   >
                     View Status on Live Board &rarr;
                   </button>
@@ -283,7 +283,7 @@ export default function ModRequestSection() {
                   {/* Mod / Bus Name */}
                   <div className="space-y-2">
                     <label className="block text-xs font-bold text-gray-300 uppercase tracking-wider flex items-center gap-2">
-                      <Bus className="w-4 h-4 text-brand-orange" />
+                      <Bus className="w-4 h-4 text-brand-cyan" />
                       <span>Requested Mod Name *</span>
                     </label>
                     <input
@@ -292,20 +292,20 @@ export default function ModRequestSection() {
                       value={formData.modName}
                       onChange={(e) => setFormData({ ...formData, modName: e.target.value })}
                       placeholder="e.g. Scania Metrolink Sleeper, KSRTC Minnal, Thar 4x4"
-                      className="w-full px-4 py-3 rounded-xl bg-dark-850 border border-dark-700 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition"
+                      className="w-full px-4 py-3 rounded-xl bg-dark-850 border border-dark-700 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan transition"
                     />
                   </div>
 
                   {/* Mod Category */}
                   <div className="space-y-2">
                     <label className="block text-xs font-bold text-gray-300 uppercase tracking-wider flex items-center gap-2">
-                      <Layers className="w-4 h-4 text-brand-orange" />
+                      <Layers className="w-4 h-4 text-brand-cyan" />
                       <span>Category</span>
                     </label>
                     <select
                       value={formData.category}
                       onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-dark-850 border border-dark-700 text-white text-sm focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition"
+                      className="w-full px-4 py-3 rounded-xl bg-dark-850 border border-dark-700 text-white text-sm focus:outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan transition"
                     >
                       {CATEGORIES.map((cat) => (
                         <option key={cat} value={cat} className="bg-dark-900 text-white">
@@ -318,7 +318,7 @@ export default function ModRequestSection() {
                   {/* Requester Name / Handle */}
                   <div className="space-y-2">
                     <label className="block text-xs font-bold text-gray-300 uppercase tracking-wider flex items-center gap-2">
-                      <User className="w-4 h-4 text-brand-orange" />
+                      <User className="w-4 h-4 text-brand-cyan" />
                       <span>Your Gamer Tag / Name</span>
                     </label>
                     <input
@@ -326,14 +326,14 @@ export default function ModRequestSection() {
                       value={formData.requesterName}
                       onChange={(e) => setFormData({ ...formData, requesterName: e.target.value })}
                       placeholder="e.g. Rahul Kerala, GamerBoy2026"
-                      className="w-full px-4 py-3 rounded-xl bg-dark-850 border border-dark-700 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition"
+                      className="w-full px-4 py-3 rounded-xl bg-dark-850 border border-dark-700 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan transition"
                     />
                   </div>
 
                   {/* YouTube / Instagram Handle (for shoutout) */}
                   <div className="space-y-2">
                     <label className="block text-xs font-bold text-gray-300 uppercase tracking-wider flex items-center gap-2">
-                      <AtSign className="w-4 h-4 text-brand-orange" />
+                      <AtSign className="w-4 h-4 text-brand-cyan" />
                       <span>YouTube or Social Handle (Optional)</span>
                     </label>
                     <input
@@ -341,7 +341,7 @@ export default function ModRequestSection() {
                       value={formData.emailOrSocial}
                       onChange={(e) => setFormData({ ...formData, emailOrSocial: e.target.value })}
                       placeholder="@yourhandle (for video shoutout)"
-                      className="w-full px-4 py-3 rounded-xl bg-dark-850 border border-dark-700 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition"
+                      className="w-full px-4 py-3 rounded-xl bg-dark-850 border border-dark-700 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan transition"
                     />
                   </div>
                 </div>
@@ -349,7 +349,7 @@ export default function ModRequestSection() {
                 {/* Special details / requirements */}
                 <div className="space-y-2">
                   <label className="block text-xs font-bold text-gray-300 uppercase tracking-wider flex items-center gap-2">
-                    <MessageSquare className="w-4 h-4 text-brand-orange" />
+                    <MessageSquare className="w-4 h-4 text-brand-cyan" />
                     <span>Extra Details or Special Features (Optional)</span>
                   </label>
                   <textarea
@@ -357,7 +357,7 @@ export default function ModRequestSection() {
                     value={formData.details}
                     onChange={(e) => setFormData({ ...formData, details: e.target.value })}
                     placeholder="Mention special details, like: 'Needs DJ bass horn tone, Kerala tourist livery, strobe lights, or steering animation'..."
-                    className="w-full px-4 py-3 rounded-xl bg-dark-850 border border-dark-700 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition resize-none"
+                    className="w-full px-4 py-3 rounded-xl bg-dark-850 border border-dark-700 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan transition resize-none"
                   />
                 </div>
 
@@ -378,9 +378,9 @@ export default function ModRequestSection() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-brand-orange to-red-600 hover:from-brand-orange-hover hover:to-red-700 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-orange-500/20 hover:shadow-orange-500/40 transition transform hover:-translate-y-0.5 disabled:opacity-50 shrink-0"
+                    className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-brand-cyan via-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 text-dark-950 font-black text-sm flex items-center justify-center gap-2 shadow-cyan-glow hover:shadow-cyan-glow/50 transition transform hover:-translate-y-0.5 disabled:opacity-50 shrink-0"
                   >
-                    <Send className="w-4 h-4" />
+                    <Send className="w-4 h-4 text-dark-950" />
                     <span>{loading ? 'Submitting Request...' : 'Send Mod Request'}</span>
                   </button>
                 </div>
@@ -394,9 +394,9 @@ export default function ModRequestSection() {
           <div className="space-y-6">
             {/* User's Own Pinned Requests */}
             {myRequests.length > 0 && (
-              <div className="bg-gradient-to-r from-dark-900 via-dark-850 to-dark-900 border border-brand-orange/40 rounded-3xl p-6 shadow-xl relative overflow-hidden">
+              <div className="bg-gradient-to-r from-dark-900 via-dark-850 to-dark-900 border border-brand-cyan/40 rounded-3xl p-6 shadow-xl relative overflow-hidden">
                 <div className="flex items-center gap-2 mb-4">
-                  <Star className="w-4 h-4 text-brand-orange fill-brand-orange" />
+                  <Star className="w-4 h-4 text-brand-cyan fill-brand-cyan" />
                   <h3 className="text-base font-extrabold text-white">Your Submitted Requests</h3>
                   <span className="text-xs text-gray-400">({myRequests.length})</span>
                 </div>
@@ -425,7 +425,7 @@ export default function ModRequestSection() {
                         {req.status === 'completed' ? (
                           <a
                             href="/mods"
-                            className="font-bold text-brand-orange hover:underline flex items-center gap-1"
+                            className="font-bold text-brand-cyan hover:underline flex items-center gap-1"
                           >
                             <span>Download Mod</span>
                             <ExternalLink className="w-3 h-3" />
@@ -447,13 +447,13 @@ export default function ModRequestSection() {
               {/* Controls */}
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 pb-4 border-b border-dark-800">
                 <div className="relative flex-1 max-w-md">
-                  <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-brand-orange" />
+                  <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-brand-cyan" />
                   <input
                     type="text"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="Search by your name or mod name..."
-                    className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-dark-850 border border-dark-700 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-brand-orange"
+                    className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-dark-850 border border-dark-700 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan"
                   />
                 </div>
 
@@ -465,7 +465,7 @@ export default function ModRequestSection() {
                     className="p-2.5 rounded-xl bg-dark-850 hover:bg-dark-800 text-gray-300 hover:text-white border border-dark-700 flex items-center gap-1.5 text-xs font-semibold transition"
                     title="Refresh Live Status"
                   >
-                    <RefreshCw className={`w-3.5 h-3.5 text-brand-orange ${fetchingRequests ? 'animate-spin' : ''}`} />
+                    <RefreshCw className={`w-3.5 h-3.5 text-brand-cyan ${fetchingRequests ? 'animate-spin' : ''}`} />
                     <span>Refresh</span>
                   </button>
 
@@ -476,8 +476,8 @@ export default function ModRequestSection() {
                         onClick={() => setStatusFilter(st)}
                         className={`px-3 py-2 rounded-xl text-xs font-semibold capitalize transition ${
                           statusFilter === st
-                            ? 'bg-brand-orange text-white shadow-sm'
-                            : 'bg-dark-850 hover:bg-dark-800 text-gray-400 hover:text-white border border-dark-700'
+                            ? 'bg-gradient-to-r from-brand-cyan to-blue-600 text-dark-950 font-black shadow-cyan-sm'
+                            : 'bg-dark-850 hover:bg-dark-800 text-gray-400 hover:text-white border border-dark-750'
                         }`}
                       >
                         {st === 'all'
@@ -507,11 +507,11 @@ export default function ModRequestSection() {
                   {filteredRequests.map((req) => (
                     <div
                       key={req.id}
-                      className="p-5 rounded-2xl bg-dark-850/80 border border-dark-750 flex flex-col justify-between space-y-4 hover:border-brand-orange/30 transition hover:-translate-y-0.5"
+                      className="p-5 rounded-2xl bg-dark-850/80 border border-dark-750 flex flex-col justify-between space-y-4 hover:border-brand-cyan/40 hover:shadow-cyan-glow/20 transition hover:-translate-y-0.5"
                     >
                       <div className="space-y-2">
                         <div className="flex items-center justify-between gap-2">
-                          <span className="text-[11px] font-semibold text-brand-orange bg-brand-orange/10 px-2 py-0.5 rounded-md">
+                          <span className="text-[11px] font-bold text-brand-cyan bg-brand-cyan/10 px-2 py-0.5 rounded-md border border-brand-cyan/20">
                             {req.category}
                           </span>
                           <span className="text-[10px] text-gray-500 font-mono">
@@ -536,7 +536,7 @@ export default function ModRequestSection() {
                             <User className="w-3.5 h-3.5 text-gray-500" />
                             <span className="font-semibold text-white">{req.requesterName}</span>
                             {req.emailOrSocial && (
-                              <span className="text-[10px] text-brand-orange font-mono">
+                              <span className="text-[10px] text-brand-cyan font-mono">
                                 ({req.emailOrSocial})
                               </span>
                             )}
