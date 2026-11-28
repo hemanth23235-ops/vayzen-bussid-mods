@@ -57,6 +57,7 @@ export default function Navbar() {
     { name: 'Cars', href: '/mods?category=bussid-cars' },
     { name: 'Trucks', href: '/mods?category=bussid-trucks' },
     { name: 'Maps', href: '/mods?category=bussid-maps' },
+    { name: 'README', href: '/readme' },
     { name: 'Request Mod', href: '/#mod-request-section' },
     { name: 'YouTube', href: '/#youtube-section' },
   ];

@@ -137,6 +137,11 @@ export default function Footer() {
                   About Creator
                 </Link>
               </li>
+              <li>
+                <Link href="/readme" className="hover:text-brand-cyan transition font-semibold text-brand-cyan">
+                  README & Guide
+                </Link>
+              </li>
             </ul>
           </div>
 
